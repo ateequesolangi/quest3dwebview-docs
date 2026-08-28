@@ -71,7 +71,7 @@ export default defineConfig({
           items: [
             { text: '1. Basic 3D Web Screen', link: '/walkthroughs/basic-web-screen' },
             { text: '2. VR Laser Pointer Clicks & Hover', link: '/walkthroughs/vr-laser-interaction' },
-            { text: '3. Multi-Monitor 3-Screen Workspace', link: '/walkthroughs/multi-monitor-workspace' },
+            { text: '3. Multi-Monitor Workspaces', link: '/walkthroughs/multi-monitor-workspace' },
             { text: '4. 3D Virtual Keyboard Integration', link: '/walkthroughs/virtual-keyboard' },
             { text: '5. 1080p60 YouTube Cinema', link: '/walkthroughs/youtube-cinema' },
             { text: '6. Dynamic Runtime URL Loading', link: '/walkthroughs/dynamic-url-loading' },

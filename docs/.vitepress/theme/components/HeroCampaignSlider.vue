@@ -126,7 +126,7 @@
                     <div class="mini-screen center active"><span>YouTube</span><small>70+ FPS</small></div>
                     <div class="mini-screen right"><span>Trello</span><small>30 FPS</small></div>
                   </div>
-                  <div class="multi-status">⚡ Multi-Instance Isolated • Zero Crosstalk</div>
+                  <div class="multi-status">⚡ Unlimited Multi-Instance Isolated • Zero Crosstalk</div>
                 </div>
 
                 <div v-else-if="currentSlide.id === 'keyboard'" class="keyboard-visual-content">
@@ -266,21 +266,21 @@ const slides = [
     id: 'multiscreen',
     icon: '🖥️',
     navTitle: 'Multi-Monitor',
-    badge: '🚀 BUILD VIRTUAL DESKTOPS',
-    headline: 'Build Virtual Offices &<br/><span class="gradient-text">Multi-Monitor Workspaces.</span>',
-    subtext: 'Run ChatGPT, YouTube, and Trello simultaneously on separate 3D monitors with zero crosstalk, isolated cookies, and independent TargetFPS caps.',
+    badge: '🚀 UNLIMITED MULTI-MONITOR',
+    headline: 'Build Virtual Offices &<br/><span class="gradient-text">Unlimited Multi-Monitor Workspaces.</span>',
+    subtext: 'Run as many concurrent 3D screens as your VR project needs (ChatGPT, YouTube, Trello, Discord, Docs) with zero crosstalk, isolated instances, and independent TargetFPS caps.',
     features: [
-      'Unconditional runtime instance ID isolation',
-      'Custom per-screen TargetFPS (15 to 60 FPS)',
-      'Auto dynamic material binding on 3D meshes'
+      'Unlimited simultaneous screen instances (scalable N-displays)',
+      'Custom per-screen TargetFPS (15 to 70+ FPS)',
+      'Auto dynamic material binding on any 3D mesh'
     ],
-    ctaText: '3-Screen Tutorial',
+    ctaText: 'Multi-Screen Tutorial',
     ctaLink: '/quest3dwebview-docs/walkthroughs/multi-monitor-workspace',
     visual: {
-      url: 'workspace://cockpit-triple-display',
-      fpsBadge: '3 Isolated Tabs',
+      url: 'workspace://cockpit-multi-display',
+      fpsBadge: 'Scalable N-Displays',
       themeClass: 'multi-theme',
-      ram: 'Triple-Display',
+      ram: 'Multi-Display',
       cpu: 'Dynamic Gated'
     }
   },
