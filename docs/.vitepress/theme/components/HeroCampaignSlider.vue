@@ -87,6 +87,26 @@
                   <div class="comp-summary">🚀 99.9% Lighter • 0 MB Extra Engine Bloat</div>
                 </div>
 
+                <div v-else-if="currentSlide.id === 'bidirectional'" class="bridge-visual-content">
+                  <div class="bridge-flow-diagram">
+                    <div class="bridge-node ue-node">
+                      <span class="node-icon">🎮</span>
+                      <span class="node-label">Unreal Engine</span>
+                      <span class="node-code">ExecuteJS()</span>
+                    </div>
+                    <div class="bridge-arrows">
+                      <span class="arrow-right">➔ JSON Payload ➔</span>
+                      <span class="arrow-left">◀ postMessage() ◀</span>
+                    </div>
+                    <div class="bridge-node web-node">
+                      <span class="node-icon">🌐</span>
+                      <span class="node-label">Web App DOM</span>
+                      <span class="node-code">window.quest3d</span>
+                    </div>
+                  </div>
+                  <div class="bridge-status-tag">✦ Real-Time Event Sync (< 1ms Latency)</div>
+                </div>
+
                 <div v-else-if="currentSlide.id === 'laser'" class="laser-visual-content">
                   <div class="laser-beam-animation">
                     <div class="laser-hit-point"></div>
@@ -196,6 +216,28 @@ const slides = [
       themeClass: 'bloat-theme',
       ram: 'System-Shared',
       cpu: '0.0ms Idle'
+    }
+  },
+  {
+    id: 'bidirectional',
+    icon: '🔄',
+    navTitle: 'Bi-Directional JS',
+    badge: '⚡ TWO-WAY UNREAL ↔ WEB',
+    headline: 'Two-Way JavaScript Bridge.<br/><span class="gradient-text">Unreal & DOM in Real-Time Sync.</span>',
+    subtext: 'Execute arbitrary JavaScript inside any web app and receive real-time JSON payloads back into Unreal Blueprint with window.quest3d.postMessage().',
+    features: [
+      'ExecuteJavaScript() node for full DOM manipulation',
+      'window.quest3d.postMessage() -> OnJavaScriptMessage delegate',
+      'Instant game state, inventory, analytics & authentication sync'
+    ],
+    ctaText: 'Explore JS Bridge',
+    ctaLink: '/quest3dwebview-docs/features/javascript-bridge',
+    visual: {
+      url: 'https://api.yourgame.com/dashboard',
+      fpsBadge: 'Bi-Directional Sync',
+      themeClass: 'bridge-theme',
+      ram: 'Zero-Copy',
+      cpu: '< 0.1ms Bridge'
     }
   },
   {
@@ -642,6 +684,42 @@ onUnmounted(() => {
 .good-bar { background: #10b981; width: 6%; }
 .comp-summary { margin-top: 0.9rem; font-size: 0.78rem; color: #38bdf8; font-weight: 600; }
 
+/* Bridge visual */
+.bridge-flow-diagram {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  justify-content: center;
+}
+.bridge-node {
+  background: #1e293b;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+.ue-node { border-color: #38bdf8; background: rgba(56, 189, 248, 0.1); }
+.web-node { border-color: #818cf8; background: rgba(129, 140, 248, 0.1); }
+.node-icon { font-size: 1.25rem; }
+.node-label { font-size: 0.75rem; font-weight: 800; color: #f8fafc; margin-top: 0.2rem; }
+.node-code { font-size: 0.65rem; color: #38bdf8; font-family: monospace; }
+.bridge-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #94a3b8;
+}
+.arrow-right { color: #38bdf8; }
+.arrow-left { color: #818cf8; }
+.bridge-status-tag { margin-top: 0.9rem; font-size: 0.75rem; color: #38bdf8; font-weight: 600; }
+
 /* Laser visual */
 .laser-card-preview { text-align: center; }
 .interactive-btn-demo {
@@ -717,8 +795,8 @@ onUnmounted(() => {
 /* Slider Selector Tabs */
 .slider-selector-bar {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.75rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.6rem;
   margin-top: 1.25rem;
 }
 
@@ -726,7 +804,7 @@ onUnmounted(() => {
   position: relative;
   background: rgba(15, 23, 42, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.75rem 0.5rem;
+  padding: 0.75rem 0.35rem;
   border-radius: 14px;
   cursor: pointer;
   display: flex;
@@ -756,7 +834,7 @@ onUnmounted(() => {
 }
 
 .pill-title {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   white-space: nowrap;
 }

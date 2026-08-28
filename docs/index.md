@@ -42,16 +42,4 @@ features:
 
 <HeroCampaignSlider />
 
-## Why Quest 3D WebView?
-
-In Unreal Engine on Meta Quest (mobile Vulkan RHI), the built-in UMG WebBrowser produces black rectangles on hardware video, suffers from severe TAA text blur, and requires complex boilerplate to project onto 3D world meshes.
-
-**Quest 3D WebView** replaces this with a production-grade C++ & Java `VirtualDisplay` hardware pipeline:
-
-```
-Android Activity ──► VirtualDisplay ──► ImageReader ──► NDK lockPixels ──► RHIUpdateTexture2D ──► 3D Material
-```
-
-* **No WebGL / Video Black Screens:** Videos stream directly through Android's hardware `MediaCodec` DSP pipeline.
-* **40+ Blueprint Nodes:** Complete control over navigation, media playback, audio muting, cookies, and two-way JavaScript messaging.
-* **Dirty-Frame Gating:** Consumes **0.00 ms GPU/CPU time** when web pages are idle.
+<MarketingSections />
