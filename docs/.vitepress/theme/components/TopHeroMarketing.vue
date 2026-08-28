@@ -267,12 +267,14 @@
 
 <script setup>
 const marqueeSpecs = [
-  { icon: '⚡', title: 'Snapdragon VPU Video', sub: '70+ FPS • 0.4ms Latency • 0 Black Screens' },
-  { icon: '🪶', title: '24 KB Micro Binary', sub: '99.9% Leaner than 250 MB CEF Bloat' },
-  { icon: '🎯', title: 'W3C Laser & Keyboard', sub: 'Sub-Pixel UV Raycast & Auto 3D Focus' },
-  { icon: '🖥️', title: 'Multi-Monitor Workspaces', sub: 'Scalable N-Displays • Isolated Cookies' },
-  { icon: '🔄', title: 'Two-Way JS Bridge', sub: '< 1ms JSON Sync with Unreal Blueprints' },
-  { icon: '🔒', title: '100% Meta Compliant', sub: '0 Dangerous Android Runtime Permissions' }
+  { icon: '⚡', title: 'Snapdragon VPU', sub: '70+ FPS Hardware Video' },
+  { icon: '🪶', title: '24 KB Footprint', sub: '0 MB Heavy CEF Bloat' },
+  { icon: '🎯', title: 'W3C Laser Pointer', sub: 'Sub-Pixel UV Raycasts' },
+  { icon: '🖥️', title: 'Multi-Monitor', sub: 'Scalable N-Displays' },
+  { icon: '🔄', title: 'Two-Way JS Bridge', sub: '< 1ms JSON Sync' },
+  { icon: '🔒', title: '100% Meta Store Compliant', sub: '0 Permissions' },
+  { icon: '⌨️', title: 'Virtual Keyboard', sub: 'Auto 3D Focus Summon' },
+  { icon: '🎮', title: '40+ Blueprint Nodes', sub: '1-Node Drag & Drop' }
 ]
 </script>
 
@@ -300,10 +302,10 @@ const marqueeSpecs = [
   border-bottom: 1px solid rgba(56, 189, 248, 0.2);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
-  padding: 0.65rem 0;
+  padding: 0.55rem 0;
   margin-bottom: 3rem;
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
 
 .marquee-track {
@@ -315,9 +317,9 @@ const marqueeSpecs = [
 .marquee-content {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  animation: marquee-scroll 28s linear infinite;
-  padding-right: 1rem;
+  gap: 0.75rem;
+  animation: marquee-scroll 58s linear infinite;
+  padding-right: 0.75rem;
 }
 
 .marquee-track:hover .marquee-content {
@@ -332,12 +334,12 @@ const marqueeSpecs = [
 .marquee-pill-item {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0.45rem 1.15rem;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
   white-space: nowrap;
   transition: all 0.2s ease;
 }
@@ -349,18 +351,18 @@ const marqueeSpecs = [
 }
 
 .m-icon {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   line-height: 1;
 }
 
 .m-text-group {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.35rem;
 }
 
 .m-title {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 800;
   color: var(--vp-c-text-1);
 }
@@ -371,7 +373,7 @@ const marqueeSpecs = [
 }
 
 .m-sub {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--vp-c-text-2);
 }
 
