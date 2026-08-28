@@ -5,198 +5,219 @@
     <div class="glow-orb orb-right"></div>
 
     <div class="top-hero-container">
-      <div class="hero-main-grid">
-        
-        <!-- Left Content Column -->
-        <div class="hero-left-col">
-          <div class="hero-top-badge">
-            <span class="pulse-indicator"></span>
-            <span class="badge-txt">UNREAL ENGINE 5.5 • META QUEST NATIVE</span>
-          </div>
+      
+      <!-- Top Header Centerpiece -->
+      <div class="hero-center-intro">
+        <div class="hero-top-badge">
+          <span class="pulse-indicator"></span>
+          <span class="badge-txt">UNREAL ENGINE 5.5 • META QUEST STANDALONE</span>
+        </div>
 
-          <h1 class="hero-master-title">
-            The Ultimate <span class="gradient-text">70+ FPS</span><br />
-            Web Browser Engine for VR
-          </h1>
+        <h1 class="hero-master-title">
+          Full WebKit Browser in VR<br />
+          <span class="gradient-text">70+ FPS & Instant Localhost Hot-Reload</span>
+        </h1>
 
-          <p class="hero-master-subtitle">
-            Render live 1080p web video, scalable multi-monitor workspaces, and interactive HTML5 web apps directly onto any 3D mesh with zero black screens, zero CPU lag, and zero APK bloat.
-          </p>
+        <p class="hero-master-subtitle">
+          Connect directly to your local PC dev servers (<code class="code-pill">http://localhost:3000</code>), stream 1080p hardware video, and build multi-screen 3D workspaces in Meta Quest with sub-millisecond response time.
+        </p>
 
-          <!-- Interactive Feature Chips -->
-          <div class="hero-feature-chips">
-            <div
-              v-for="(chip, index) in featureChips"
-              :key="chip.title"
-              class="chip-item"
-              :class="{ active: activeMode === chip.mode }"
-              @click="activeMode = chip.mode"
-            >
-              <span class="chip-icon">{{ chip.icon }}</span>
-              <span class="chip-title">{{ chip.title }}</span>
+        <!-- CTA Action Row -->
+        <div class="hero-actions-center">
+          <a href="/quest3dwebview-docs/getting-started/quick-start" class="hero-cta-primary">
+            <span>🚀 5-Minute Quick Start</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="/quest3dwebview-docs/features/overview" class="hero-cta-secondary">
+            <span>Explore All Capabilities</span>
+          </a>
+          <a href="/quest3dwebview-docs/api-reference/blueprint-functions" class="hero-cta-secondary">
+            <span>📚 40+ Blueprint Nodes</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- DEDICATED 3-CHANNEL CINEMATIC DEMO VIDEO THEATER                           -->
+      <!-- ========================================================================= -->
+      <div class="cinema-theater-wrapper">
+        <div class="theater-card glass-panel">
+          
+          <!-- Theater Header / Channel Selector Tabs -->
+          <div class="theater-topbar">
+            <div class="theater-title-group">
+              <span class="live-dot"></span>
+              <span class="theater-heading">FEATURE DEMO CHANNELS</span>
+            </div>
+
+            <div class="video-channel-tabs">
+              <button
+                v-for="(vid, idx) in demoVideos"
+                :key="vid.id"
+                class="channel-btn"
+                :class="{ active: currentVideoIndex === idx }"
+                @click="currentVideoIndex = idx"
+              >
+                <span class="ch-icon">{{ vid.icon }}</span>
+                <span class="ch-title">{{ vid.title }}</span>
+                <span class="ch-badge">{{ vid.badge }}</span>
+              </button>
             </div>
           </div>
 
-          <!-- Hero Action Buttons -->
-          <div class="hero-action-group">
-            <a href="/quest3dwebview-docs/getting-started/quick-start" class="hero-cta-primary glow-btn">
-              <span>🚀 5-Minute Quick Start</span>
-              <span class="btn-arrow">→</span>
-            </a>
-            <a href="/quest3dwebview-docs/api-reference/blueprint-functions" class="hero-cta-secondary">
-              <span>🎮 Live Blueprint Simulator</span>
-            </a>
+          <!-- Video Player Screen Stage -->
+          <div class="theater-screen-stage">
+            
+            <!-- Video Overlay Watermark & Badges -->
+            <div class="stage-overlay-top">
+              <div class="v-tag-left">
+                <span class="res-tag">{{ activeVideo.resolution }}</span>
+                <span class="fps-tag">{{ activeVideo.fps }}</span>
+              </div>
+              <div class="v-tag-right">
+                <span class="audio-tag">🔊 {{ activeVideo.audioMode }}</span>
+              </div>
+            </div>
+
+            <!-- Video Player Screen Area -->
+            <div class="screen-canvas-box" :class="activeVideo.themeClass">
+              
+              <!-- Video Mock Visual Display -->
+              <div class="video-canvas-content">
+                
+                <!-- Channel 1: Hardware Video & Audio -->
+                <div v-if="activeVideo.id === 'video-demo'" class="vid-stage-channel">
+                  <div class="vid-center-hero">
+                    <div class="vid-play-button-glow">
+                      <span class="play-triangle">▶</span>
+                    </div>
+                    <div class="vid-main-title">{{ activeVideo.headline }}</div>
+                    <div class="vid-sub-caption">{{ activeVideo.caption }}</div>
+                  </div>
+
+                  <!-- Dynamic Audio Waveform -->
+                  <div class="cinema-eq-spectrum">
+                    <div v-for="n in 24" :key="n" class="spectrum-bar" :style="{ animationDelay: (n * 0.05) + 's' }"></div>
+                  </div>
+                </div>
+
+                <!-- Channel 2: Localhost & PC Hot Reload -->
+                <div v-else-if="activeVideo.id === 'localhost-demo'" class="vid-stage-channel localhost-channel">
+                  <div class="localhost-ui-mockup">
+                    <div class="mock-terminal">
+                      <div class="term-bar"><span class="t-dot red"></span><span class="t-dot yel"></span><span class="t-dot grn"></span> Local Vite/Next Dev Server</div>
+                      <div class="term-code">
+                        <span class="cmd-green">$ npm run dev</span><br/>
+                        <span class="cmd-cyan">➜ Local:    http://localhost:3000/</span><br/>
+                        <span class="cmd-cyan">➜ Network:  http://192.168.1.104:3000/</span><br/>
+                        <span class="cmd-green">✓ Ready in 180ms • Instant HMR Active in VR</span>
+                      </div>
+                    </div>
+                    <div class="vr-sync-bridge">
+                      <span class="sync-icon">⚡</span>
+                      <span class="sync-txt">Zero Deploy • Direct PC ➔ Quest VR Stream</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Channel 3: VR Laser & Multi-Screen -->
+                <div v-else-if="activeVideo.id === 'laser-demo'" class="vid-stage-channel laser-channel">
+                  <div class="laser-multi-mockup">
+                    <div class="floating-vr-monitors">
+                      <div class="vr-mon">ChatGPT</div>
+                      <div class="vr-mon active">YouTube Cinema</div>
+                      <div class="vr-mon">Trello</div>
+                    </div>
+                    <div class="laser-beam-indicator">
+                      <span>🎯 3D Hit UV: (0.52, 0.68) ➔ Instant W3C Hover & Click</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Bottom Video Controls Bar -->
+              <div class="screen-control-bar">
+                <div class="ctrl-left">
+                  <button class="ctrl-play-btn">▶</button>
+                  <div class="timecode">00:48 / 02:30</div>
+                </div>
+                <div class="ctrl-progress-bar">
+                  <div class="progress-fill" :style="{ width: '38%' }"></div>
+                </div>
+                <div class="ctrl-right">
+                  <span class="hd-pill">1080p 70+ FPS</span>
+                  <span class="fullscreen-icon">⛶</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Video Channel Info Description Footer -->
+            <div class="theater-footer-info">
+              <div class="footer-desc-col">
+                <h3 class="video-info-title">{{ activeVideo.headline }}</h3>
+                <p class="video-info-text">{{ activeVideo.description }}</p>
+              </div>
+              <div class="footer-cta-col">
+                <a :href="activeVideo.learnMoreLink" class="video-doc-link">
+                  <span>{{ activeVideo.learnMoreText }}</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Trust & Compatibility Badges -->
-          <div class="hero-trust-bar">
-            <div class="trust-pill"><span class="check-icon">✓</span> Snapdragon XR2 Hardware VPU</div>
-            <div class="trust-pill"><span class="check-icon">✓</span> 24 KB Zero Bloat</div>
-            <div class="trust-pill"><span class="check-icon">✓</span> 0 Permissions Required</div>
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- 3 MASTER PILLAR ADVANTAGE CARDS (Distinct from slider)                     -->
+      <!-- ========================================================================= -->
+      <div class="hero-pillars-grid">
+        
+        <div class="pillar-card glass-card">
+          <div class="pillar-icon-box cyan">💻</div>
+          <h3 class="pillar-title">Instant Localhost & LAN Dev</h3>
+          <p class="pillar-desc">
+            Test web UI directly from your local PC dev server (<code class="inline-code">localhost:3000</code> or local IP) with instant Hot Module Replacement inside the Quest VR headset without cloud deployments.
+          </p>
+          <div class="pillar-tags">
+            <span>Next.js / Vite</span>
+            <span>Local PC HMR</span>
+            <span>Offline LAN</span>
           </div>
         </div>
 
-        <!-- Right 3D Interactive Hologram Column -->
-        <div class="hero-right-col">
-          <div class="hologram-3d-wrapper">
-            <div class="hologram-card glass-panel" :class="activeModeClass">
-              
-              <!-- Hologram Window Titlebar -->
-              <div class="holo-titlebar">
-                <div class="holo-dots">
-                  <span class="dot red"></span>
-                  <span class="dot yellow"></span>
-                  <span class="dot green"></span>
-                </div>
-                <div class="holo-url-bar">
-                  <span class="lock-icon">🔒</span>
-                  <span class="url-text">{{ currentModeData.url }}</span>
-                </div>
-                <div class="holo-fps-tag">
-                  <span class="fps-pulse"></span>
-                  70+ FPS
-                </div>
-              </div>
+        <div class="pillar-card glass-card">
+          <div class="pillar-icon-box green">⚡</div>
+          <h3 class="pillar-title">True 70+ FPS Hardware Video</h3>
+          <p class="pillar-desc">
+            Bypasses software canvas drawing entirely. Offloaded 100% to Qualcomm Snapdragon VPU hardware decoding for crystal-clear 1080p YouTube, Twitch, and HTML5 video with zero black screens.
+          </p>
+          <div class="pillar-tags">
+            <span>Snapdragon XR2</span>
+            <span>0.4ms Latency</span>
+            <span>Zero Black Screens</span>
+          </div>
+        </div>
 
-              <!-- Hologram Live Viewport Surface -->
-              <div class="holo-screen-surface">
-                <!-- Mode 1: Cinema 70+ FPS Video -->
-                <div v-if="activeMode === 'video'" class="holo-mode-content mode-video">
-                  <div class="video-center-graphic">
-                    <div class="vpu-pulse-ring">
-                      <span class="play-symbol">▶</span>
-                    </div>
-                    <div class="video-info-badge">
-                      <span class="yt-pill">YouTube 4K • 70+ FPS</span>
-                      <span class="latency-pill">0.4ms Render Latency</span>
-                    </div>
-                  </div>
-
-                  <!-- Live Equalizer Soundwaves -->
-                  <div class="sound-equalizer">
-                    <div v-for="i in 16" :key="i" class="eq-bar" :style="{ animationDelay: (i * 0.08) + 's' }"></div>
-                  </div>
-                </div>
-
-                <!-- Mode 2: Multi-Monitor Cockpit -->
-                <div v-else-if="activeMode === 'multi'" class="holo-mode-content mode-multi">
-                  <div class="multi-monitor-cockpit">
-                    <div class="monitor-panel left">
-                      <span class="mon-title">ChatGPT</span>
-                      <span class="mon-fps">30 FPS</span>
-                    </div>
-                    <div class="monitor-panel center main">
-                      <span class="mon-title">YouTube Cinema</span>
-                      <span class="mon-fps active">70+ FPS</span>
-                    </div>
-                    <div class="monitor-panel right">
-                      <span class="mon-title">Trello Board</span>
-                      <span class="mon-fps">30 FPS</span>
-                    </div>
-                  </div>
-                  <div class="multi-info-bar">
-                    <span>⚡ Scalable N-Display Instances • Zero Crosstalk</span>
-                  </div>
-                </div>
-
-                <!-- Mode 3: VR Laser Interaction -->
-                <div v-else-if="activeMode === 'laser'" class="holo-mode-content mode-laser">
-                  <div class="laser-ray-visual">
-                    <div class="laser-origin">Controller Laser</div>
-                    <div class="laser-line"></div>
-                    <div class="laser-target-hit">
-                      <div class="hit-dot"></div>
-                      <div class="hit-ring"></div>
-                    </div>
-                  </div>
-                  <div class="laser-action-card">
-                    <span class="w3c-tag">W3C Pointer Hover Active</span>
-                    <span class="uv-coords">Hit UV: (0.54, 0.76) ➔ ClickUV()</span>
-                  </div>
-                </div>
-
-                <!-- Mode 4: Bi-Directional JS Bridge -->
-                <div v-else-if="activeMode === 'bridge'" class="holo-mode-content mode-bridge">
-                  <div class="bridge-sync-nodes">
-                    <div class="b-node ue">🎮 Unreal Engine 5</div>
-                    <div class="b-pulse-arrows">⇄ JSON Bridge ⇄</div>
-                    <div class="b-node web">🌐 Web DOM App</div>
-                  </div>
-                  <div class="bridge-payload-preview">
-                    <code>window.quest3d.postMessage({ event: "buy", price: 50 });</code>
-                  </div>
-                </div>
-
-                <!-- Mode 5: Virtual Keyboard Focus -->
-                <div v-else-if="activeMode === 'keyboard'" class="holo-mode-content mode-keyboard">
-                  <div class="keyboard-focus-input">
-                    <span class="cursor-line">|</span> Search in VR World...
-                  </div>
-                  <div class="keyboard-sim-keys">
-                    <div class="k-row"><span class="key">Q</span><span class="key">W</span><span class="key">E</span><span class="key">R</span><span class="key">T</span><span class="key">Y</span><span class="key">U</span></div>
-                    <div class="k-row"><span class="key">A</span><span class="key">S</span><span class="key">D</span><span class="key">F</span><span class="key">G</span><span class="key">H</span><span class="key">J</span></div>
-                  </div>
-                  <div class="kb-status">⌨️ OnTextInputFocusChanged ➔ 3D Keyboard Summoned</div>
-                </div>
-
-                <!-- Mode 6: 24 KB Zero Bloat -->
-                <div v-else-if="activeMode === 'bloat'" class="holo-mode-content mode-bloat">
-                  <div class="bloat-compare-grid">
-                    <div class="bloat-card cef">
-                      <span class="bc-name">CEF / GeckoView</span>
-                      <span class="bc-size">+250 MB Extra</span>
-                    </div>
-                    <div class="bloat-card quest">
-                      <span class="bc-name">Quest 3D WebView</span>
-                      <span class="bc-size win">24 KB (0.02 MB)</span>
-                    </div>
-                  </div>
-                  <div class="bloat-winner-bar">
-                    <span>🚀 99.9% Leaner • Reuses Meta Quest OS Chromium</span>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- Hologram Footer Interactive Mode Bar -->
-              <div class="holo-footer-mode-bar">
-                <button
-                  v-for="chip in featureChips"
-                  :key="chip.mode"
-                  class="mode-switch-btn"
-                  :class="{ active: activeMode === chip.mode }"
-                  @click="activeMode = chip.mode"
-                >
-                  <span>{{ chip.icon }}</span>
-                  <span class="btn-lbl">{{ chip.shortTitle }}</span>
-                </button>
-              </div>
-
-            </div>
+        <div class="pillar-card glass-card">
+          <div class="pillar-icon-box purple">🪶</div>
+          <h3 class="pillar-title">24 KB Micro Footprint</h3>
+          <p class="pillar-desc">
+            Reuses the high-performance WebKit engine already built into Meta Quest Horizon OS. Adds only 24 KB to your packaged APK compared to 250 MB bloated CEF binaries, and requires 0 dangerous permissions.
+          </p>
+          <div class="pillar-tags">
+            <span>24 KB (0.02 MB)</span>
+            <span>0 Permissions</span>
+            <span>100% Store Pass</span>
           </div>
         </div>
 
       </div>
+
     </div>
   </div>
 </template>
@@ -204,92 +225,89 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-const activeMode = ref('video')
+const currentVideoIndex = ref(0)
 
-const featureChips = [
+const demoVideos = [
   {
-    mode: 'video',
+    id: 'video-demo',
+    title: '70+ FPS Video & Audio',
+    badge: 'Hardware VPU',
     icon: '🎬',
-    title: '70+ FPS Hardware Video',
-    shortTitle: 'Video',
-    url: 'https://youtube.com/watch?v=VR_Cinema_4K'
+    resolution: '1080p60 / 4K',
+    fps: '70+ FPS Solid',
+    audioMode: 'HTML5 Direct & Spatial Audio',
+    headline: 'Cinema-Quality 70+ FPS Hardware Video Playback in VR',
+    caption: 'Full Snapdragon XR2 VPU hardware decoding with zero CPU texture uploads.',
+    description: 'Watch 1080p60 YouTube streams, live Twitch broadcasts, and local MP4/H.264 video with true hardware acceleration directly mapped to 3D meshes in Unreal Engine 5.5.',
+    themeClass: 'theme-video',
+    learnMoreText: 'Read Video Cinema Guide',
+    learnMoreLink: '/quest3dwebview-docs/walkthroughs/youtube-cinema'
   },
   {
-    mode: 'multi',
-    icon: '🖥️',
-    title: 'Unlimited Multi-Monitor',
-    shortTitle: 'Multi-Screen',
-    url: 'workspace://unlimited-virtual-desktops'
+    id: 'localhost-demo',
+    title: 'Localhost & PC Hot Reload',
+    badge: 'Zero Deploy',
+    icon: '💻',
+    resolution: 'Real-Time HMR',
+    fps: 'Instant Sync',
+    audioMode: 'Local Audio Stream',
+    headline: 'Instant Localhost & LAN Web Development in VR',
+    caption: 'Connect directly to your local PC dev servers (Vite, Next.js, React) with instant HMR in VR.',
+    description: 'Iterate at lightning speed. Spin up your local dev server on your PC and view live updates in your Quest VR headset instantly without building or deploying to cloud servers.',
+    themeClass: 'theme-localhost',
+    learnMoreText: 'Read Localhost & Offline Guide',
+    learnMoreLink: '/quest3dwebview-docs/walkthroughs/dynamic-url-loading'
   },
   {
-    mode: 'laser',
+    id: 'laser-demo',
+    title: 'VR Laser & Multi-Monitor',
+    badge: 'W3C Pointer',
     icon: '🎯',
-    title: 'W3C VR Laser Hover',
-    shortTitle: 'VR Laser',
-    url: 'https://app.dashboard.io/vr'
-  },
-  {
-    mode: 'bridge',
-    icon: '🔄',
-    title: 'Two-Way JS Bridge',
-    shortTitle: 'JS Bridge',
-    url: 'https://api.yourgame.com/hud'
-  },
-  {
-    mode: 'keyboard',
-    icon: '⌨️',
-    title: 'Auto 3D Keyboard Focus',
-    shortTitle: 'Keyboard',
-    url: 'https://google.com/search?q=VR'
-  },
-  {
-    mode: 'bloat',
-    icon: '🪶',
-    title: '24 KB Zero-Bloat',
-    shortTitle: '24 KB Bloat',
-    url: 'meta://system-webview-native'
+    resolution: 'Sub-Pixel UV',
+    fps: 'Multi-Screen',
+    audioMode: 'Multi-Channel Gated',
+    headline: 'Precision VR Laser Pointer & Unlimited Multi-Screen Workspaces',
+    caption: 'Raycast UV clicks, W3C hover states, kinetic dragging, and multi-monitor isolation.',
+    description: 'Run scalable multi-monitor productivity workstations with isolated cookies and independent TargetFPS caps, fully controllable with VR motion controller laser pointers.',
+    themeClass: 'theme-laser',
+    learnMoreText: 'Read Multi-Monitor Walkthrough',
+    learnMoreLink: '/quest3dwebview-docs/walkthroughs/multi-monitor-workspace'
   }
 ]
 
-const currentModeData = computed(() => {
-  return featureChips.find(c => c.mode === activeMode.value) || featureChips[0]
-})
-
-const activeModeClass = computed(() => {
-  return `theme-${activeMode.value}`
-})
+const activeVideo = computed(() => demoVideos[currentVideoIndex.value])
 </script>
 
 <style scoped>
 .top-hero-wrapper {
   position: relative;
   width: 100%;
-  padding: 3rem 0.5rem 2.5rem 0.5rem;
+  padding: 3.5rem 0.5rem 2.5rem 0.5rem;
   overflow: hidden;
 }
 
 .glow-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(140px);
   pointer-events: none;
   z-index: 0;
   opacity: 0.35;
 }
 
 .orb-left {
-  top: -10%;
-  left: 5%;
-  width: 420px;
-  height: 420px;
+  top: -5%;
+  left: 10%;
+  width: 500px;
+  height: 500px;
   background: radial-gradient(circle, #38bdf8 0%, rgba(56, 189, 248, 0) 70%);
 }
 
 .orb-right {
-  top: 15%;
-  right: 5%;
-  width: 450px;
-  height: 450px;
+  top: 20%;
+  right: 8%;
+  width: 520px;
+  height: 520px;
   background: radial-gradient(circle, #818cf8 0%, rgba(129, 140, 248, 0) 70%);
 }
 
@@ -300,19 +318,18 @@ const activeModeClass = computed(() => {
   margin: 0 auto;
 }
 
-.hero-main-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2.5rem;
-  align-items: center;
+/* Header Centerpiece */
+.hero-center-intro {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3rem auto;
 }
 
-/* Left Hero Column */
 .hero-top-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.4rem 0.9rem;
+  padding: 0.4rem 0.95rem;
   border-radius: 9999px;
   font-size: 0.78rem;
   font-weight: 800;
@@ -334,14 +351,14 @@ const activeModeClass = computed(() => {
 
 @keyframes pulse-glow {
   0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 14px #38bdf8; }
+  50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 14px #38bdf8; }
   100% { transform: scale(0.95); opacity: 0.8; }
 }
 
 .hero-master-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 2.85rem;
-  line-height: 1.15;
+  font-size: 3rem;
+  line-height: 1.18;
   font-weight: 900;
   color: #f8fafc;
   margin-bottom: 1.2rem;
@@ -355,66 +372,34 @@ const activeModeClass = computed(() => {
 }
 
 .hero-master-subtitle {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.15rem;
+  line-height: 1.65;
   color: #cbd5e1;
-  margin-bottom: 1.75rem;
-}
-
-/* Feature Chips */
-.hero-feature-chips {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.6rem;
   margin-bottom: 2rem;
 }
 
-.chip-item {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.55rem 0.75rem;
-  border-radius: 10px;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #94a3b8;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.chip-item:hover {
-  background: rgba(30, 41, 59, 0.8);
-  border-color: rgba(56, 189, 248, 0.4);
-  color: #f8fafc;
-  transform: translateY(-2px);
-}
-
-.chip-item.active {
+.code-pill {
   background: rgba(56, 189, 248, 0.15);
-  border-color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.4);
   color: #38bdf8;
-  box-shadow: 0 0 14px rgba(56, 189, 248, 0.25);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.9em;
 }
 
-.chip-icon {
-  font-size: 1.05rem;
-}
-
-/* Actions */
-.hero-action-group {
+.hero-actions-center {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 1.75rem;
 }
 
 .hero-cta-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.6rem;
+  padding: 0.85rem 1.75rem;
   border-radius: 12px;
   font-weight: 800;
   font-size: 1rem;
@@ -433,10 +418,10 @@ const activeModeClass = computed(() => {
 .hero-cta-secondary {
   display: inline-flex;
   align-items: center;
-  padding: 0.85rem 1.6rem;
+  padding: 0.85rem 1.5rem;
   border-radius: 12px;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #f8fafc !important;
@@ -449,192 +434,222 @@ const activeModeClass = computed(() => {
   border-color: rgba(56, 189, 248, 0.4);
 }
 
-.hero-trust-bar {
-  display: flex;
-  gap: 1.25rem;
-  flex-wrap: wrap;
+/* ========================================================================= */
+/* CINEMA THEATER PLAYER SECTION                                             */
+/* ========================================================================= */
+.cinema-theater-wrapper {
+  margin-bottom: 3.5rem;
 }
 
-.trust-pill {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #94a3b8;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.check-icon {
-  color: #10b981;
-  font-weight: bold;
-}
-
-/* Right 3D Hologram Column */
-.hologram-3d-wrapper {
-  perspective: 1200px;
-}
-
-.hologram-card {
+.theater-card {
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(56, 189, 248, 0.2);
-  transform: rotateY(-6deg) rotateX(3deg);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(56, 189, 248, 0.15);
 }
 
-.hologram-card:hover {
-  transform: rotateY(0deg) rotateX(0deg) scale(1.02);
-  border-color: rgba(56, 189, 248, 0.6);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 50px rgba(56, 189, 248, 0.35);
-}
-
-.holo-titlebar {
+.theater-topbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0.65rem 1rem;
-  background: #0f172a;
+  align-items: center;
+  padding: 0.85rem 1.5rem;
+  background: #090d16;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.holo-dots {
-  display: flex;
-  gap: 0.35rem;
-}
-
-.dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-}
-.dot.red { background: #ef4444; }
-.dot.yellow { background: #f59e0b; }
-.dot.green { background: #10b981; }
-
-.holo-url-bar {
+.theater-title-group {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  background: #1e293b;
-  padding: 0.25rem 0.8rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  color: #94a3b8;
-  max-width: 220px;
-  overflow: hidden;
-  white-space: nowrap;
+  gap: 0.5rem;
 }
 
-.holo-fps-tag {
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+  animation: pulse-glow 1.5s infinite;
+}
+
+.theater-heading {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #94a3b8;
+  letter-spacing: 0.08em;
+}
+
+.video-channel-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.channel-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.45rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.channel-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+}
+
+.channel-btn.active {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+
+.ch-badge {
+  font-size: 0.68rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Stage & Player Surface */
+.theater-screen-stage {
+  position: relative;
+  background: #060911;
+}
+
+.stage-overlay-top {
+  position: absolute;
+  top: 1rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.v-tag-left {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.res-tag {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f8fafc;
   font-size: 0.72rem;
   font-weight: 800;
-  padding: 0.2rem 0.55rem;
+  padding: 0.25rem 0.55rem;
   border-radius: 6px;
-  background: rgba(16, 185, 129, 0.2);
+}
+
+.fps-tag {
+  background: rgba(16, 185, 129, 0.25);
+  border: 1px solid #10b981;
   color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.4);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
 }
 
-.fps-pulse {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 6px #10b981;
-  animation: pulse-fps 1.5s infinite;
+.audio-tag {
+  background: rgba(56, 189, 248, 0.2);
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
 }
 
-@keyframes pulse-fps {
-  0% { opacity: 0.6; }
-  50% { opacity: 1; transform: scale(1.3); }
-  100% { opacity: 0.6; }
-}
-
-.holo-screen-surface {
+.screen-canvas-box {
   position: relative;
-  height: 250px;
-  background: radial-gradient(circle at center, #131d33 0%, #070b14 100%);
+  height: 340px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background: radial-gradient(circle at center, #111a2e 0%, #060911 100%);
   padding: 1.5rem;
   overflow: hidden;
 }
 
-/* Video Mode */
-.mode-video {
+.video-canvas-content {
+  margin-top: auto;
+  margin-bottom: auto;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-.vpu-pulse-ring {
-  width: 64px;
-  height: 64px;
+/* Video Stage */
+.vid-center-hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vid-play-button-glow {
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   background: linear-gradient(135deg, #ef4444, #dc2626);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 30px rgba(239, 68, 68, 0.7);
-  animation: vpu-glow 2s infinite ease-in-out;
+  box-shadow: 0 0 35px rgba(239, 68, 68, 0.8);
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-@keyframes vpu-glow {
-  0% { transform: scale(0.95); box-shadow: 0 0 20px rgba(239, 68, 68, 0.6); }
-  50% { transform: scale(1.08); box-shadow: 0 0 40px rgba(239, 68, 68, 0.9); }
-  100% { transform: scale(0.95); box-shadow: 0 0 20px rgba(239, 68, 68, 0.6); }
+.vid-play-button-glow:hover {
+  transform: scale(1.1);
 }
 
-.play-symbol {
-  color: #fff;
-  font-size: 1.4rem;
+.play-triangle {
+  color: #ffffff;
+  font-size: 1.5rem;
   margin-left: 4px;
 }
 
-.video-info-badge {
-  display: flex;
-  gap: 0.6rem;
-  margin-top: 1rem;
-}
-
-.yt-pill {
-  background: #ef4444;
-  color: #fff;
+.vid-main-title {
+  font-size: 1.35rem;
   font-weight: 800;
-  font-size: 0.72rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 6px;
+  color: #f8fafc;
+  margin-bottom: 0.4rem;
 }
 
-.latency-pill {
-  background: rgba(56, 189, 248, 0.15);
-  border: 1px solid #38bdf8;
-  color: #38bdf8;
-  font-weight: 700;
-  font-size: 0.72rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 6px;
+.vid-sub-caption {
+  font-size: 0.88rem;
+  color: #94a3b8;
 }
 
-.sound-equalizer {
+.cinema-eq-spectrum {
   position: absolute;
-  bottom: 12px;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  gap: 4px;
+  gap: 5px;
   align-items: flex-end;
-  height: 24px;
+  height: 28px;
 }
 
-.eq-bar {
+.spectrum-bar {
   width: 4px;
   background: linear-gradient(180deg, #38bdf8, #818cf8);
   border-radius: 2px;
@@ -643,227 +658,303 @@ const activeModeClass = computed(() => {
 
 @keyframes eq-bounce {
   0% { height: 4px; }
-  100% { height: 22px; }
+  100% { height: 26px; }
 }
 
-/* Multi-monitor Mode */
-.multi-monitor-cockpit {
-  display: flex;
-  gap: 0.6rem;
-  width: 100%;
-  justify-content: center;
-}
-
-.monitor-panel {
-  padding: 0.75rem 0.6rem;
-  background: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+/* Localhost Mock */
+.localhost-ui-mockup {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 0.75rem;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.mock-terminal {
+  width: 100%;
+  background: #0a0f1d;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.term-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background: #111827;
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.t-dot { width: 8px; height: 8px; border-radius: 50%; }
+.t-dot.red { background: #ef4444; }
+.t-dot.yel { background: #f59e0b; }
+.t-dot.grn { background: #10b981; }
+
+.term-code {
+  padding: 0.85rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.cmd-green { color: #10b981; }
+.cmd-cyan { color: #38bdf8; font-weight: bold; }
+
+.vr-sync-bridge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
   font-weight: 800;
 }
 
-.monitor-panel.main {
+/* Laser Mock */
+.laser-multi-mockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.floating-vr-monitors {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.vr-mon {
+  padding: 0.85rem 1.25rem;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #94a3b8;
+}
+
+.vr-mon.active {
   border-color: #38bdf8;
-  box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+  color: #f8fafc;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
   transform: scale(1.08);
 }
 
-.mon-fps {
-  font-size: 0.65rem;
-  color: #94a3b8;
-  margin-top: 0.2rem;
-}
-
-.mon-fps.active {
-  color: #10b981;
-  font-weight: 900;
-}
-
-.multi-info-bar {
-  margin-top: 1.25rem;
-  font-size: 0.78rem;
-  color: #38bdf8;
-  font-weight: 700;
-}
-
-/* Laser Mode */
-.laser-ray-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  width: 100%;
-  justify-content: center;
-}
-
-.laser-origin {
-  background: #0284c7;
-  color: #fff;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  font-size: 0.72rem;
+.laser-beam-indicator {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
   font-weight: 800;
 }
 
-.laser-line {
-  height: 2px;
-  width: 120px;
-  background: linear-gradient(90deg, #38bdf8, #ef4444);
-  box-shadow: 0 0 8px #ef4444;
-}
-
-.laser-target-hit {
-  position: relative;
-  width: 16px;
-  height: 16px;
-}
-
-.hit-dot {
-  width: 8px;
-  height: 8px;
-  background: #ef4444;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #ef4444;
-}
-
-.laser-action-card {
-  margin-top: 1.25rem;
+/* Screen Control Bar */
+.screen-control-bar {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.3rem;
+  gap: 1rem;
+  background: rgba(15, 23, 42, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  z-index: 10;
 }
 
-.w3c-tag {
-  background: rgba(56, 189, 248, 0.15);
-  border: 1px solid #38bdf8;
+.ctrl-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ctrl-play-btn {
+  background: none;
+  border: none;
   color: #38bdf8;
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 
-.uv-coords {
-  font-size: 0.75rem;
-  color: #f8fafc;
+.timecode {
+  font-size: 0.72rem;
+  color: #94a3b8;
   font-family: monospace;
 }
 
-/* Bridge Mode */
-.bridge-sync-nodes {
+.ctrl-progress-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #38bdf8;
+}
+
+.ctrl-right {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
 }
 
-.b-node {
-  padding: 0.6rem 0.8rem;
-  border-radius: 8px;
-  font-size: 0.75rem;
+.hd-pill {
+  font-size: 0.68rem;
   font-weight: 800;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
 }
-.b-node.ue { background: rgba(56, 189, 248, 0.2); border: 1px solid #38bdf8; color: #fff; }
-.b-node.web { background: rgba(129, 140, 248, 0.2); border: 1px solid #818cf8; color: #fff; }
-.b-pulse-arrows { font-size: 0.72rem; color: #10b981; font-weight: 900; }
-.bridge-payload-preview { margin-top: 1rem; font-size: 0.72rem; color: #38bdf8; background: #0c1220; padding: 0.5rem 0.75rem; border-radius: 6px; }
 
-/* Keyboard Mode */
-.keyboard-focus-input {
-  background: #1e293b;
-  border: 1px solid #38bdf8;
-  padding: 0.4rem 0.9rem;
-  border-radius: 6px;
-  color: #f8fafc;
-  font-size: 0.8rem;
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
-  margin-bottom: 0.75rem;
+.fullscreen-icon {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  cursor: pointer;
 }
-.cursor-line { color: #38bdf8; animation: blink 1s infinite; font-weight: bold; }
-@keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
-.keyboard-sim-keys { display: flex; flex-direction: column; gap: 0.25rem; }
-.k-row { display: flex; gap: 0.25rem; }
-.key { background: #334155; padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; color: #f8fafc; }
-.kb-status { margin-top: 0.75rem; font-size: 0.72rem; color: #38bdf8; font-weight: 700; }
 
-/* Bloat Mode */
-.bloat-compare-grid { display: flex; gap: 1rem; width: 100%; }
-.bloat-card { flex: 1; padding: 0.8rem; border-radius: 8px; text-align: center; display: flex; flex-direction: column; gap: 0.3rem; }
-.bloat-card.cef { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); }
-.bloat-card.quest { background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; }
-.bc-name { font-size: 0.72rem; color: #94a3b8; }
-.bc-size { font-size: 0.95rem; font-weight: 900; }
-.bc-size.win { color: #10b981; }
-.bloat-winner-bar { margin-top: 1rem; font-size: 0.75rem; color: #38bdf8; font-weight: 700; }
-
-/* Footer Mode Switcher */
-.holo-footer-mode-bar {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+/* Theater Footer Info */
+.theater-footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
   background: #090d16;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.mode-switch-btn {
-  padding: 0.65rem 0.25rem;
-  background: none;
-  border: none;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+.video-info-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 0.25rem;
+  border-top: none !important;
+}
+
+.video-info-text {
+  font-size: 0.88rem;
   color: #94a3b8;
-  display: flex;
-  flex-direction: column;
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+.video-doc-link {
+  display: inline-flex;
   align-items: center;
-  gap: 0.2rem;
-  font-size: 0.75rem;
-  cursor: pointer;
+  gap: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid #38bdf8;
+  color: #38bdf8 !important;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-decoration: none !important;
   transition: all 0.2s ease;
 }
 
-.mode-switch-btn:last-child {
-  border-right: none;
+.video-doc-link:hover {
+  background: #38bdf8;
+  color: #04121e !important;
 }
 
-.mode-switch-btn:hover {
-  background: rgba(255, 255, 255, 0.04);
-  color: #f8fafc;
+/* ========================================================================= */
+/* 3 MASTER PILLAR ADVANTAGE CARDS                                           */
+/* ========================================================================= */
+.hero-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
 }
 
-.mode-switch-btn.active {
-  background: rgba(56, 189, 248, 0.15);
-  color: #38bdf8;
+.pillar-card {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.pillar-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.pillar-icon-box.cyan { background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; }
+.pillar-icon-box.green { background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; }
+.pillar-icon-box.purple { background: rgba(129, 140, 248, 0.15); border: 1px solid #818cf8; }
+
+.pillar-title {
+  font-size: 1.15rem;
   font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 0.5rem;
+  border-top: none !important;
 }
 
-.btn-lbl {
-  font-size: 0.68rem;
-  white-space: nowrap;
+.pillar-desc {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.inline-code {
+  background: rgba(255, 255, 255, 0.08);
+  color: #38bdf8;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.pillar-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.pillar-tags span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
 }
 
 @media (max-width: 960px) {
-  .hero-main-grid {
+  .hero-pillars-grid {
     grid-template-columns: 1fr;
   }
   .hero-master-title {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
   }
-  .hero-feature-chips {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .hologram-card {
-    transform: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-feature-chips {
-    grid-template-columns: 1fr;
-  }
-  .holo-footer-mode-bar {
-    grid-template-columns: repeat(3, 1fr);
+  .theater-topbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 </style>
