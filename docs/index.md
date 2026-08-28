@@ -40,6 +40,8 @@ features:
     details: Requires ZERO dangerous Android runtime permissions. Safe, clean, and immediately ready for Horizon Store submission.
 ---
 
+<HeroCampaignSlider />
+
 ## Why Quest 3D WebView?
 
 In Unreal Engine on Meta Quest (mobile Vulkan RHI), the built-in UMG WebBrowser produces black rectangles on hardware video, suffers from severe TAA text blur, and requires complex boilerplate to project onto 3D world meshes.
