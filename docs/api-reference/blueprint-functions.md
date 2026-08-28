@@ -1,6 +1,8 @@
-# Blueprint Functions Reference (40+ Nodes)
+---
+layout: doc
+---
 
-Complete alphabetical reference of all `UFUNCTION` nodes provided by `UQuestWebViewComponent`.
+<BlueprintNodesGuide />
 
 ---
 
