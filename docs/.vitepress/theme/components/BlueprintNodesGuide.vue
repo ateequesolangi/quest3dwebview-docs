@@ -810,14 +810,16 @@ const filteredNodes = computed(() => {
 
 <style scoped>
 .bp-guide-wrapper {
-  max-width: 1152px;
-  margin: 1.5rem auto 4rem auto;
-  padding: 0 0.5rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 1rem 0 3rem 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .bp-guide-header {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .header-badge {
@@ -833,7 +835,7 @@ const filteredNodes = computed(() => {
 }
 
 .header-title {
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   font-weight: 900;
   color: #f8fafc;
   line-height: 1.25;
@@ -842,10 +844,10 @@ const filteredNodes = computed(() => {
 }
 
 .header-desc {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #94a3b8;
   max-width: 720px;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 1.5rem auto;
   line-height: 1.55;
 }
 
@@ -864,12 +866,15 @@ const filteredNodes = computed(() => {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .search-box {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .search-icon {
@@ -888,6 +893,7 @@ const filteredNodes = computed(() => {
   font-size: 0.95rem;
   outline: none;
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
 .search-input:focus {
@@ -967,8 +973,10 @@ const filteredNodes = computed(() => {
 /* Nodes Grid */
 .nodes-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .node-card {
