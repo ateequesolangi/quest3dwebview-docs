@@ -10,16 +10,16 @@
       <div class="hero-center-intro">
         <div class="hero-top-badge">
           <span class="pulse-indicator"></span>
-          <span class="badge-txt">UNREAL ENGINE 5.5 • META QUEST STANDALONE</span>
+          <span class="badge-txt">UNREAL ENGINE 5.5 • META QUEST NATIVE</span>
         </div>
 
         <h1 class="hero-master-title">
-          Full WebKit Browser in VR<br />
-          <span class="gradient-text">70+ FPS & Instant Localhost Hot-Reload</span>
+          The #1 Web Browser Engine for Meta Quest in UE5<br />
+          <span class="gradient-text">True 70+ FPS Hardware Video • Any 3D Mesh • 24 KB Footprint</span>
         </h1>
 
         <p class="hero-master-subtitle">
-          Connect directly to your local PC dev servers (<code class="code-pill">http://localhost:3000</code>), stream 1080p hardware video, and build multi-screen 3D workspaces in Meta Quest with sub-millisecond response time.
+          The only Unreal Engine plugin engineered for Meta Quest that renders live 1080p web video (YouTube, Twitch, WebGL) onto any 3D surface with <strong>zero black screens</strong>, <strong>zero APK bloat</strong>, and <strong>full W3C VR laser interaction</strong>.
         </p>
 
         <!-- CTA Action Row -->
@@ -32,7 +32,7 @@
             <span>Explore All Capabilities</span>
           </a>
           <a href="/quest3dwebview-docs/api-reference/blueprint-functions" class="hero-cta-secondary">
-            <span>📚 40+ Blueprint Nodes</span>
+            <span>📚 Blueprint API Reference</span>
           </a>
         </div>
       </div>
@@ -47,7 +47,7 @@
           <div class="theater-topbar">
             <div class="theater-title-group">
               <span class="live-dot"></span>
-              <span class="theater-heading">FEATURE DEMO CHANNELS</span>
+              <span class="theater-heading">OFFICIAL DEMO SHOWCASE</span>
             </div>
 
             <div class="video-channel-tabs">
@@ -101,35 +101,42 @@
                   </div>
                 </div>
 
-                <!-- Channel 2: Localhost & PC Hot Reload -->
-                <div v-else-if="activeVideo.id === 'localhost-demo'" class="vid-stage-channel localhost-channel">
-                  <div class="localhost-ui-mockup">
-                    <div class="mock-terminal">
-                      <div class="term-bar"><span class="t-dot red"></span><span class="t-dot yel"></span><span class="t-dot grn"></span> Local Vite/Next Dev Server</div>
-                      <div class="term-code">
-                        <span class="cmd-green">$ npm run dev</span><br/>
-                        <span class="cmd-cyan">➜ Local:    http://localhost:3000/</span><br/>
-                        <span class="cmd-cyan">➜ Network:  http://192.168.1.104:3000/</span><br/>
-                        <span class="cmd-green">✓ Ready in 180ms • Instant HMR Active in VR</span>
-                      </div>
+                <!-- Channel 2: Multi-Monitor Workspaces -->
+                <div v-else-if="activeVideo.id === 'multi-demo'" class="vid-stage-channel multi-channel">
+                  <div class="multi-monitor-cockpit-stage">
+                    <div class="vr-mon-card left">
+                      <span class="mon-app">ChatGPT</span>
+                      <small class="mon-stat">30 FPS • Isolated</small>
                     </div>
-                    <div class="vr-sync-bridge">
-                      <span class="sync-icon">⚡</span>
-                      <span class="sync-txt">Zero Deploy • Direct PC ➔ Quest VR Stream</span>
+                    <div class="vr-mon-card center active">
+                      <span class="mon-app">YouTube Cinema</span>
+                      <small class="mon-stat green">70+ FPS Hardware VPU</small>
                     </div>
+                    <div class="vr-mon-card right">
+                      <span class="mon-app">Trello / Discord</span>
+                      <small class="mon-stat">30 FPS • Isolated</small>
+                    </div>
+                  </div>
+                  <div class="multi-sync-pill">
+                    ⚡ Scalable Multi-Screen Workspaces • Zero Crosstalk • Independent TargetFPS
                   </div>
                 </div>
 
-                <!-- Channel 3: VR Laser & Multi-Screen -->
+                <!-- Channel 3: VR Laser & Touch Interaction -->
                 <div v-else-if="activeVideo.id === 'laser-demo'" class="vid-stage-channel laser-channel">
                   <div class="laser-multi-mockup">
-                    <div class="floating-vr-monitors">
-                      <div class="vr-mon">ChatGPT</div>
-                      <div class="vr-mon active">YouTube Cinema</div>
-                      <div class="vr-mon">Trello</div>
+                    <div class="laser-raycast-box">
+                      <div class="controller-node">🎮 Quest Touch Controller</div>
+                      <div class="laser-beam-trace"></div>
+                      <div class="mesh-target-hit">
+                        <span class="hit-point"></span>
+                        <span class="hit-label">Raycast UV Hit: (0.54, 0.72)</span>
+                      </div>
                     </div>
-                    <div class="laser-beam-indicator">
-                      <span>🎯 3D Hit UV: (0.52, 0.68) ➔ Instant W3C Hover & Click</span>
+                    <div class="laser-action-pills">
+                      <span class="l-pill">🎯 W3C Pointer Hover</span>
+                      <span class="l-pill">🖱️ ClickUV()</span>
+                      <span class="l-pill">⌨️ Auto 3D Keyboard Focus</span>
                     </div>
                   </div>
                 </div>
@@ -143,7 +150,7 @@
                   <div class="timecode">00:48 / 02:30</div>
                 </div>
                 <div class="ctrl-progress-bar">
-                  <div class="progress-fill" :style="{ width: '38%' }"></div>
+                  <div class="progress-fill" :style="{ width: '42%' }"></div>
                 </div>
                 <div class="ctrl-right">
                   <span class="hd-pill">1080p 70+ FPS</span>
@@ -173,28 +180,15 @@
       </div>
 
       <!-- ========================================================================= -->
-      <!-- 3 MASTER PILLAR ADVANTAGE CARDS (Distinct from slider)                     -->
+      <!-- 3 CORE COMMERCIAL PILLARS (Straight from Product Scope)                    -->
       <!-- ========================================================================= -->
       <div class="hero-pillars-grid">
         
         <div class="pillar-card glass-card">
-          <div class="pillar-icon-box cyan">💻</div>
-          <h3 class="pillar-title">Instant Localhost & LAN Dev</h3>
-          <p class="pillar-desc">
-            Test web UI directly from your local PC dev server (<code class="inline-code">localhost:3000</code> or local IP) with instant Hot Module Replacement inside the Quest VR headset without cloud deployments.
-          </p>
-          <div class="pillar-tags">
-            <span>Next.js / Vite</span>
-            <span>Local PC HMR</span>
-            <span>Offline LAN</span>
-          </div>
-        </div>
-
-        <div class="pillar-card glass-card">
           <div class="pillar-icon-box green">⚡</div>
           <h3 class="pillar-title">True 70+ FPS Hardware Video</h3>
           <p class="pillar-desc">
-            Bypasses software canvas drawing entirely. Offloaded 100% to Qualcomm Snapdragon VPU hardware decoding for crystal-clear 1080p YouTube, Twitch, and HTML5 video with zero black screens.
+            Direct Snapdragon VPU hardware decoding via native Android <code class="inline-code">VirtualDisplay</code>. Zero black screens on YouTube, Twitch, and HTML5 video, mapped seamlessly to dynamic 3D materials.
           </p>
           <div class="pillar-tags">
             <span>Snapdragon XR2</span>
@@ -204,15 +198,28 @@
         </div>
 
         <div class="pillar-card glass-card">
-          <div class="pillar-icon-box purple">🪶</div>
-          <h3 class="pillar-title">24 KB Micro Footprint</h3>
+          <div class="pillar-icon-box cyan">🪶</div>
+          <h3 class="pillar-title">24 KB Zero-Bloat Footprint</h3>
           <p class="pillar-desc">
-            Reuses the high-performance WebKit engine already built into Meta Quest Horizon OS. Adds only 24 KB to your packaged APK compared to 250 MB bloated CEF binaries, and requires 0 dangerous permissions.
+            Reuses Meta Quest OS System WebKit directly. Adds only 24 KB to your packaged APK compared to 250 MB bloated CEF binaries, saving thermal headroom, memory bandwidth, and battery life.
           </p>
           <div class="pillar-tags">
             <span>24 KB (0.02 MB)</span>
+            <span>0 MB Heavy CEF</span>
+            <span>Zero RAM Waste</span>
+          </div>
+        </div>
+
+        <div class="pillar-card glass-card">
+          <div class="pillar-icon-box purple">🔒</div>
+          <h3 class="pillar-title">100% Meta Store Compliant</h3>
+          <p class="pillar-desc">
+            Requires <strong>zero dangerous Android runtime permissions</strong> (zero camera, zero mic, zero external storage). Guaranteed automated ingestion pass for Horizon Store and App Lab submissions.
+          </p>
+          <div class="pillar-tags">
             <span>0 Permissions</span>
-            <span>100% Store Pass</span>
+            <span>Horizon Store Pass</span>
+            <span>App Lab Verified</span>
           </div>
         </div>
 
@@ -230,48 +237,48 @@ const currentVideoIndex = ref(0)
 const demoVideos = [
   {
     id: 'video-demo',
-    title: '70+ FPS Video & Audio',
-    badge: 'Hardware VPU',
+    title: '70+ FPS Hardware Video',
+    badge: 'Snapdragon VPU',
     icon: '🎬',
     resolution: '1080p60 / 4K',
     fps: '70+ FPS Solid',
-    audioMode: 'HTML5 Direct & Spatial Audio',
-    headline: 'Cinema-Quality 70+ FPS Hardware Video Playback in VR',
-    caption: 'Full Snapdragon XR2 VPU hardware decoding with zero CPU texture uploads.',
-    description: 'Watch 1080p60 YouTube streams, live Twitch broadcasts, and local MP4/H.264 video with true hardware acceleration directly mapped to 3D meshes in Unreal Engine 5.5.',
+    audioMode: 'Direct & Spatial Audio',
+    headline: '1080p 70+ FPS Hardware-Decoded Web Video in VR',
+    caption: 'Direct Qualcomm Snapdragon VPU decoding into Unreal Dynamic Materials with 0 black screens.',
+    description: 'Watch live 1080p YouTube videos, Twitch streams, and WebGL applications mapped seamlessly onto curved cinema screens, IMAX walls, and in-game 3D meshes in Unreal Engine 5.5.',
     themeClass: 'theme-video',
-    learnMoreText: 'Read Video Cinema Guide',
+    learnMoreText: 'Read Video Walkthrough',
     learnMoreLink: '/quest3dwebview-docs/walkthroughs/youtube-cinema'
   },
   {
-    id: 'localhost-demo',
-    title: 'Localhost & PC Hot Reload',
-    badge: 'Zero Deploy',
-    icon: '💻',
-    resolution: 'Real-Time HMR',
-    fps: 'Instant Sync',
-    audioMode: 'Local Audio Stream',
-    headline: 'Instant Localhost & LAN Web Development in VR',
-    caption: 'Connect directly to your local PC dev servers (Vite, Next.js, React) with instant HMR in VR.',
-    description: 'Iterate at lightning speed. Spin up your local dev server on your PC and view live updates in your Quest VR headset instantly without building or deploying to cloud servers.',
-    themeClass: 'theme-localhost',
-    learnMoreText: 'Read Localhost & Offline Guide',
-    learnMoreLink: '/quest3dwebview-docs/walkthroughs/dynamic-url-loading'
+    id: 'multi-demo',
+    title: 'Multi-Monitor Workspaces',
+    badge: 'Scalable Screens',
+    icon: '🖥️',
+    resolution: 'Independent Sessions',
+    fps: 'Gated FPS Control',
+    audioMode: 'Per-Screen Muting',
+    headline: 'Unlimited Multi-Monitor Virtual Offices & Productivity Hubs',
+    caption: 'Run concurrent isolated 3D monitors (ChatGPT, Trello, Discord, Docs) with zero crosstalk.',
+    description: 'Build virtual desktop environments with arbitrary numbers of concurrent web screens. Each screen has independent session cookies, per-display TargetFPS caps, and one-click audio muting.',
+    themeClass: 'theme-multi',
+    learnMoreText: 'Read Multi-Monitor Guide',
+    learnMoreLink: '/quest3dwebview-docs/walkthroughs/multi-monitor-workspace'
   },
   {
     id: 'laser-demo',
-    title: 'VR Laser & Multi-Monitor',
+    title: 'VR Laser & 3D Keyboard',
     badge: 'W3C Pointer',
     icon: '🎯',
-    resolution: 'Sub-Pixel UV',
-    fps: 'Multi-Screen',
-    audioMode: 'Multi-Channel Gated',
-    headline: 'Precision VR Laser Pointer & Unlimited Multi-Screen Workspaces',
-    caption: 'Raycast UV clicks, W3C hover states, kinetic dragging, and multi-monitor isolation.',
-    description: 'Run scalable multi-monitor productivity workstations with isolated cookies and independent TargetFPS caps, fully controllable with VR motion controller laser pointers.',
+    resolution: 'Sub-Pixel UV Raycast',
+    fps: 'Real-Time Touch',
+    audioMode: 'Focus Audio Feedback',
+    headline: 'Precision VR Laser Raycasts, W3C Hover & Virtual Keyboard',
+    caption: 'Native W3C pointer events, continuous touch dragging, and automatic 3D keyboard focus detection.',
+    description: 'Line trace from your Quest Touch controllers directly to any 3D mesh. Converts raycast hits into native web clicks, CSS hover states, analog thumbstick scrolling, and auto 3D keyboard focus.',
     themeClass: 'theme-laser',
-    learnMoreText: 'Read Multi-Monitor Walkthrough',
-    learnMoreLink: '/quest3dwebview-docs/walkthroughs/multi-monitor-workspace'
+    learnMoreText: 'Read VR Interaction Guide',
+    learnMoreLink: '/quest3dwebview-docs/walkthroughs/vr-laser-interaction'
   }
 ]
 
@@ -321,7 +328,7 @@ const activeVideo = computed(() => demoVideos[currentVideoIndex.value])
 /* Header Centerpiece */
 .hero-center-intro {
   text-align: center;
-  max-width: 860px;
+  max-width: 900px;
   margin: 0 auto 3rem auto;
 }
 
@@ -357,8 +364,8 @@ const activeVideo = computed(() => demoVideos[currentVideoIndex.value])
 
 .hero-master-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 3rem;
-  line-height: 1.18;
+  font-size: 2.85rem;
+  line-height: 1.2;
   font-weight: 900;
   color: var(--vp-c-text-1);
   margin-bottom: 1.2rem;
@@ -376,16 +383,6 @@ const activeVideo = computed(() => demoVideos[currentVideoIndex.value])
   line-height: 1.65;
   color: var(--vp-c-text-2);
   margin-bottom: 2rem;
-}
-
-.code-pill {
-  background: rgba(56, 189, 248, 0.15);
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  color: #0284c7;
-  padding: 0.2rem 0.5rem;
-  border-radius: 6px;
-  font-family: monospace;
-  font-size: 0.9em;
 }
 
 .hero-actions-center {
@@ -661,60 +658,49 @@ const activeVideo = computed(() => demoVideos[currentVideoIndex.value])
   100% { height: 26px; }
 }
 
-/* Localhost Mock */
-.localhost-ui-mockup {
+/* Multi-monitor Mock */
+.multi-monitor-cockpit-stage {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.vr-mon-card {
+  padding: 0.85rem 1.1rem;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  width: 100%;
-  max-width: 600px;
+  gap: 0.25rem;
 }
 
-.mock-terminal {
-  width: 100%;
-  background: #0a0f1d;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  border-radius: 10px;
-  overflow: hidden;
+.vr-mon-card.active {
+  border-color: #38bdf8;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+  transform: scale(1.08);
 }
 
-.term-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.75rem;
-  background: #111827;
-  font-size: 0.72rem;
+.mon-app {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.mon-stat {
+  font-size: 0.68rem;
   color: #94a3b8;
 }
+.mon-stat.green { color: #10b981; font-weight: 800; }
 
-.t-dot { width: 8px; height: 8px; border-radius: 50%; }
-.t-dot.red { background: #ef4444; }
-.t-dot.yel { background: #f59e0b; }
-.t-dot.grn { background: #10b981; }
-
-.term-code {
-  padding: 0.85rem 1rem;
-  font-family: 'JetBrains Mono', monospace;
+.multi-sync-pill {
+  margin-top: 1.5rem;
   font-size: 0.78rem;
-  line-height: 1.6;
-}
-
-.cmd-green { color: #10b981; }
-.cmd-cyan { color: #38bdf8; font-weight: bold; }
-
-.vr-sync-bridge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(56, 189, 248, 0.15);
-  border: 1px solid #38bdf8;
   color: #38bdf8;
-  padding: 0.4rem 0.9rem;
-  border-radius: 9999px;
-  font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 700;
+  text-align: center;
 }
 
 /* Laser Mock */
@@ -722,39 +708,57 @@ const activeVideo = computed(() => demoVideos[currentVideoIndex.value])
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
+  width: 100%;
 }
 
-.floating-vr-monitors {
+.laser-raycast-box {
   display: flex;
+  align-items: center;
   gap: 0.75rem;
 }
 
-.vr-mon {
-  padding: 0.85rem 1.25rem;
-  background: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  font-size: 0.82rem;
+.controller-node {
+  background: #0284c7;
+  color: #ffffff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
   font-weight: 800;
-  color: #94a3b8;
 }
 
-.vr-mon.active {
-  border-color: #38bdf8;
-  color: #f8fafc;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
-  transform: scale(1.08);
+.laser-beam-trace {
+  height: 2px;
+  width: 120px;
+  background: linear-gradient(90deg, #38bdf8, #ef4444);
+  box-shadow: 0 0 8px #ef4444;
 }
 
-.laser-beam-indicator {
-  background: rgba(239, 68, 68, 0.15);
+.mesh-target-hit {
+  background: rgba(239, 68, 68, 0.2);
   border: 1px solid #ef4444;
-  color: #ef4444;
-  padding: 0.4rem 0.9rem;
-  border-radius: 9999px;
-  font-size: 0.8rem;
-  font-weight: 800;
+  color: #f8fafc;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-family: monospace;
+}
+
+.laser-action-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.l-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
 }
 
 /* Screen Control Bar */
@@ -870,7 +874,7 @@ const activeVideo = computed(() => demoVideos[currentVideoIndex.value])
 }
 
 /* ========================================================================= */
-/* 3 MASTER PILLAR ADVANTAGE CARDS                                           */
+/* 3 CORE COMMERCIAL PILLARS                                                 */
 /* ========================================================================= */
 .hero-pillars-grid {
   display: grid;
@@ -923,7 +927,7 @@ const activeVideo = computed(() => demoVideos[currentVideoIndex.value])
 
 .inline-code {
   background: rgba(255, 255, 255, 0.08);
-  color: #38bdf8;
+  color: #0284c7;
   padding: 0.1rem 0.35rem;
   border-radius: 4px;
   font-family: monospace;
