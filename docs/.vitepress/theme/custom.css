@@ -22,14 +22,32 @@ h1, h2, h3, h4, h5, h6, .VPNavBarTitle, .hero-title, .section-title, .slide-head
 }
 
 /* ========================================================================= */
-/* LIGHT THEME (Crisp White, Charcoal Slate, Standard AAA Contrast)           */
+/* LIGHT THEME (Crisp Pure White & Jet Slate WCAG AAA Contrast)              */
 /* ========================================================================= */
 html:not(.dark) {
-  --vp-c-bg: #ffffff;
-  --vp-c-bg-alt: #f8fafc;
-  --vp-c-bg-elv: #ffffff;
-  --vp-c-border: #e2e8f0;
+  --vp-c-bg: #ffffff !important;
+  --vp-c-bg-alt: #f8fafc !important;
+  --vp-c-bg-elv: #ffffff !important;
+  --vp-c-border: #e2e8f0 !important;
+  --vp-c-text-1: #0f172a !important;
+  --vp-c-text-2: #334155 !important;
+  --vp-c-text-3: #475569 !important;
   
+  /* Universal Light Theme Headings */
+  h1, h2, h3, h4, h5, h6,
+  .hero-master-title, .slide-headline, .section-title, .header-title,
+  .usecase-title, .faq-q-text, .stat-number, .feature-title strong,
+  .pillar-title, .tab-card-title, .results-meta strong, strong {
+    color: #0f172a !important;
+  }
+
+  /* Universal Light Theme Body & Descriptions */
+  p, .hero-master-subtitle, .slide-subtext, .section-subtitle,
+  .header-desc, .stat-desc, .feature-desc, .usecase-desc, .faq-answer-text,
+  .pillar-desc, .node-desc, .results-meta, .highlight-item, .trust-pill, .stat-label {
+    color: #334155 !important;
+  }
+
   /* Standard VitePress Feature Cards */
   .VPFeature {
     background: #ffffff !important;
@@ -68,26 +86,6 @@ html:not(.dark) {
     border: 1px solid #e2e8f0 !important;
     box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06) !important;
     backdrop-filter: none !important;
-  }
-
-  /* Headings & Texts */
-  .hero-master-title, .slide-headline, .section-title, .header-title, .usecase-title, .faq-q-text, .stat-number, .feature-title strong, .tab-card-title {
-    color: #0f172a !important;
-  }
-  
-  .hero-master-subtitle, .slide-subtext, .section-subtitle, .header-desc, .stat-desc, .feature-desc, .usecase-desc, .faq-answer-text, .node-desc, .results-meta {
-    color: #334155 !important;
-    font-weight: 500;
-  }
-
-  .stat-label, .comp-table th, .feature-list li {
-    color: #1e293b !important;
-    font-weight: 700;
-  }
-
-  .trust-pill {
-    color: #334155 !important;
-    font-weight: 600;
   }
 
   /* Top Hero Chips in Light Mode */
@@ -268,6 +266,18 @@ html:not(.dark) {
 
   .node-card:hover {
     border-color: #0284c7 !important;
+  }
+
+  /* Pillars & Use cases */
+  .pillar-card, .usecase-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  .pillar-tags span, .usecase-tags span {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0284c7 !important;
   }
 
   /* Playground */

@@ -742,7 +742,7 @@ const filteredNodes = computed(() => {
 .header-title {
   font-size: 2.1rem;
   font-weight: 900;
-  color: #f8fafc;
+  color: var(--vp-c-text-1);
   line-height: 1.25;
   margin-bottom: 0.8rem;
   border-top: none !important;
@@ -750,7 +750,7 @@ const filteredNodes = computed(() => {
 
 .header-desc {
   font-size: 1rem;
-  color: #94a3b8;
+  color: var(--vp-c-text-2);
   max-width: 720px;
   margin: 0 auto 1.5rem auto;
   line-height: 1.55;
@@ -866,7 +866,7 @@ const filteredNodes = computed(() => {
 }
 
 .results-meta strong {
-  color: #f8fafc;
+  color: var(--vp-c-text-1);
 }
 
 .filter-tag a {
@@ -994,7 +994,7 @@ const filteredNodes = computed(() => {
 
 .node-desc {
   font-size: 0.88rem;
-  color: #cbd5e1;
+  color: var(--vp-c-text-2);
   line-height: 1.5;
   margin-bottom: 1rem;
 }

@@ -540,7 +540,7 @@ const faqList = [
 .section-title {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #f8fafc;
+  color: var(--vp-c-text-1);
   line-height: 1.25;
   margin-bottom: 0.6rem;
   border-top: none !important;
@@ -548,7 +548,7 @@ const faqList = [
 
 .section-subtitle {
   font-size: 1.05rem;
-  color: #94a3b8;
+  color: var(--vp-c-text-2);
   max-width: 650px;
   margin: 0 auto;
   line-height: 1.5;
@@ -601,7 +601,7 @@ const faqList = [
 .stat-number {
   font-size: 2.4rem;
   font-weight: 900;
-  color: #f8fafc;
+  color: var(--vp-c-text-1);
   line-height: 1;
   margin-bottom: 0.4rem;
 }
@@ -616,13 +616,13 @@ const faqList = [
 .stat-label {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #e2e8f0;
+  color: var(--vp-c-text-1);
   margin-bottom: 0.5rem;
 }
 
 .stat-desc {
   font-size: 0.8rem;
-  color: #94a3b8;
+  color: var(--vp-c-text-2);
   line-height: 1.45;
 }
 
@@ -699,14 +699,14 @@ const faqList = [
 }
 
 .feature-title strong {
-  color: #f8fafc;
+  color: var(--vp-c-text-1);
   font-size: 1rem;
   font-weight: 800;
 }
 
 .feature-desc {
   font-size: 0.8rem;
-  color: #94a3b8;
+  color: var(--vp-c-text-2);
   line-height: 1.45;
   padding-left: 2rem;
 }
@@ -973,14 +973,14 @@ const faqList = [
 .usecase-title {
   font-size: 1.2rem;
   font-weight: 800;
-  color: #f8fafc;
+  color: var(--vp-c-text-1);
   margin-bottom: 0.5rem;
   border-top: none !important;
 }
 
 .usecase-desc {
   font-size: 0.88rem;
-  color: #94a3b8;
+  color: var(--vp-c-text-2);
   line-height: 1.55;
   margin-bottom: 1.25rem;
 }
@@ -998,7 +998,7 @@ const faqList = [
   border-radius: 6px;
   background: rgba(56, 189, 248, 0.1);
   border: 1px solid rgba(56, 189, 248, 0.25);
-  color: #38bdf8;
+  color: #0284c7;
 }
 
 /* FAQ */
@@ -1055,7 +1055,7 @@ const faqList = [
 .faq-q-text {
   font-size: 1.02rem;
   font-weight: 800;
-  color: #f8fafc;
+  color: var(--vp-c-text-1);
   line-height: 1.35;
 }
 
@@ -1099,7 +1099,7 @@ const faqList = [
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.92rem;
-  color: #cbd5e1;
+  color: var(--vp-c-text-2);
   line-height: 1.65;
 }
 

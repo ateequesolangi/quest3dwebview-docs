@@ -360,7 +360,7 @@ const activeVideo = computed(() => demoVideos[currentVideoIndex.value])
   font-size: 3rem;
   line-height: 1.18;
   font-weight: 900;
-  color: #f8fafc;
+  color: var(--vp-c-text-1);
   margin-bottom: 1.2rem;
   border-top: none !important;
 }
@@ -374,14 +374,14 @@ const activeVideo = computed(() => demoVideos[currentVideoIndex.value])
 .hero-master-subtitle {
   font-size: 1.15rem;
   line-height: 1.65;
-  color: #cbd5e1;
+  color: var(--vp-c-text-2);
   margin-bottom: 2rem;
 }
 
 .code-pill {
   background: rgba(56, 189, 248, 0.15);
   border: 1px solid rgba(56, 189, 248, 0.4);
-  color: #38bdf8;
+  color: #0284c7;
   padding: 0.2rem 0.5rem;
   border-radius: 6px;
   font-family: monospace;
@@ -424,7 +424,7 @@ const activeVideo = computed(() => demoVideos[currentVideoIndex.value])
   font-size: 0.95rem;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #f8fafc !important;
+  color: var(--vp-c-text-1) !important;
   text-decoration: none !important;
   transition: all 0.25s ease;
 }
@@ -908,14 +908,14 @@ const activeVideo = computed(() => demoVideos[currentVideoIndex.value])
 .pillar-title {
   font-size: 1.15rem;
   font-weight: 800;
-  color: #f8fafc;
+  color: var(--vp-c-text-1);
   margin-bottom: 0.5rem;
   border-top: none !important;
 }
 
 .pillar-desc {
   font-size: 0.88rem;
-  color: #94a3b8;
+  color: var(--vp-c-text-2);
   line-height: 1.55;
   margin-bottom: 1.25rem;
   flex: 1;

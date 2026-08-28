@@ -462,7 +462,7 @@ onUnmounted(() => {
   line-height: 1.25;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: #f8fafc;
+  color: var(--vp-c-text-1);
 }
 
 .gradient-text {
@@ -474,7 +474,7 @@ onUnmounted(() => {
 .slide-subtext {
   font-size: 1.05rem;
   line-height: 1.6;
-  color: #cbd5e1;
+  color: var(--vp-c-text-2);
   margin-bottom: 1.5rem;
 }
 
@@ -490,7 +490,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 0.6rem;
   font-size: 0.92rem;
-  color: #e2e8f0;
+  color: var(--vp-c-text-1);
 }
 
 .check-icon {
