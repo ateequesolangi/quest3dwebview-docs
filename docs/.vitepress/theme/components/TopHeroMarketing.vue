@@ -6,51 +6,136 @@
 
     <div class="top-hero-container">
       
-      <!-- Top Header Centerpiece -->
-      <div class="hero-center-intro">
-        <div class="hero-top-badge">
-          <span class="pulse-indicator"></span>
-          <span class="badge-txt">UNREAL ENGINE 5.5 • META QUEST NATIVE</span>
+      <!-- ========================================================================= -->
+      <!-- TOP HERO SPLIT ROW: MARKETING PITCH (LEFT) + PROMO VIDEO FRAME (RIGHT)    -->
+      <!-- ========================================================================= -->
+      <div class="hero-split-grid">
+        
+        <!-- Left Side: Core Marketing Pitch -->
+        <div class="hero-pitch-left">
+          <div class="hero-top-badge">
+            <span class="pulse-indicator"></span>
+            <span class="badge-txt">UNREAL ENGINE 5.5 • META QUEST NATIVE</span>
+          </div>
+
+          <h1 class="hero-master-title">
+            The #1 Web Browser Engine for Meta Quest in UE5
+          </h1>
+          <div class="hero-master-gradient-sub">
+            True 70+ FPS Hardware Video • Any 3D Mesh • 24 KB Footprint
+          </div>
+
+          <p class="hero-master-subtitle">
+            The only Unreal Engine plugin engineered for Meta Quest that renders live 1080p web video (YouTube, Twitch, WebGL) onto any 3D surface with <strong>zero black screens</strong>, <strong>zero APK bloat</strong>, and <strong>full W3C VR laser interaction</strong>.
+          </p>
+
+          <!-- CTA Action Row -->
+          <div class="hero-actions-left">
+            <a href="/quest3dwebview-docs/getting-started/quick-start" class="hero-cta-primary">
+              <span>🚀 5-Minute Quick Start</span>
+              <span class="btn-arrow">→</span>
+            </a>
+            <a href="/quest3dwebview-docs/features/overview" class="hero-cta-secondary">
+              <span>Explore All Capabilities</span>
+            </a>
+            <a href="/quest3dwebview-docs/api-reference/blueprint-functions" class="hero-cta-secondary">
+              <span>📚 Blueprint API</span>
+            </a>
+          </div>
+
+          <!-- Quick Trust Metrics Row -->
+          <div class="quick-trust-row">
+            <div class="trust-item">
+              <span class="t-icon">⚡</span>
+              <span class="t-txt"><strong>70+ FPS</strong> Solid</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <span class="t-icon">🪶</span>
+              <span class="t-txt"><strong>24 KB</strong> Zero Bloat</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+              <span class="t-icon">🔒</span>
+              <span class="t-txt"><strong>0</strong> Permissions</span>
+            </div>
+          </div>
         </div>
 
-        <h1 class="hero-master-title">
-          The #1 Web Browser Engine for Meta Quest in UE5<br />
-          <span class="gradient-text">True 70+ FPS Hardware Video • Any 3D Mesh • 24 KB Footprint</span>
-        </h1>
+        <!-- Right Side: Promotional Video Container (Ready for user's video) -->
+        <div class="hero-video-right">
+          <div class="promo-video-frame glass-panel">
+            
+            <!-- Video Top Header Bar -->
+            <div class="video-frame-topbar">
+              <div class="v-live-tag">
+                <span class="v-live-dot"></span>
+                <span class="v-live-txt">PROMOTIONAL VIDEO</span>
+              </div>
+              <div class="v-meta-badges">
+                <span class="v-badge-res">1080p60</span>
+                <span class="v-badge-fps">70+ FPS</span>
+              </div>
+            </div>
 
-        <p class="hero-master-subtitle">
-          The only Unreal Engine plugin engineered for Meta Quest that renders live 1080p web video (YouTube, Twitch, WebGL) onto any 3D surface with <strong>zero black screens</strong>, <strong>zero APK bloat</strong>, and <strong>full W3C VR laser interaction</strong>.
-        </p>
+            <!-- Video Display Canvas Area -->
+            <div class="video-canvas-stage">
+              <!-- Holographic Grid Background -->
+              <div class="grid-backdrop"></div>
 
-        <!-- CTA Action Row -->
-        <div class="hero-actions-center">
-          <a href="/quest3dwebview-docs/getting-started/quick-start" class="hero-cta-primary">
-            <span>🚀 5-Minute Quick Start</span>
-            <span class="btn-arrow">→</span>
-          </a>
-          <a href="/quest3dwebview-docs/features/overview" class="hero-cta-secondary">
-            <span>Explore All Capabilities</span>
-          </a>
-          <a href="/quest3dwebview-docs/api-reference/blueprint-functions" class="hero-cta-secondary">
-            <span>📚 Blueprint API Reference</span>
-          </a>
+              <div class="video-center-content">
+                <div class="video-play-orb">
+                  <span class="play-arrow">▶</span>
+                  <div class="orb-ripple"></div>
+                </div>
+                <div class="v-stage-title">Official Feature Walkthrough</div>
+                <div class="v-stage-sub">Direct Qualcomm Snapdragon VPU & 3D Laser Raycasting</div>
+              </div>
+
+              <!-- Sleek Bottom Video Controls -->
+              <div class="video-bottom-controls">
+                <div class="v-ctrl-play">▶</div>
+                <div class="v-ctrl-progress">
+                  <div class="v-progress-active" style="width: 38%;"></div>
+                </div>
+                <div class="v-ctrl-time">01:14 / 03:00</div>
+                <div class="v-ctrl-hd">HD</div>
+              </div>
+            </div>
+
+            <!-- Video Bottom Status Bar -->
+            <div class="video-frame-footer">
+              <div class="v-footer-info">
+                <span class="v-foot-icon">🎬</span>
+                <span class="v-foot-text">Live 1080p YouTube, Twitch & Multi-Screen 3D Workspaces</span>
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </div>
 
       <!-- ========================================================================= -->
-      <!-- KEY PRODUCT FEATURES SHOWCASE GRID (VISUAL & STRAIGHTFORWARD)             -->
+      <!-- THE 6 ANIMATED & BEAUTIFUL PRODUCT FEATURE CARDS                           -->
       <!-- ========================================================================= -->
+      <div class="section-divider-heading">
+        <span class="sub-label">CORE ARCHITECTURE & ADVANTAGES</span>
+        <h2 class="cards-section-title">Everything You Need for Production VR Browsing</h2>
+      </div>
+
       <div class="features-showcase-grid">
         
-        <!-- Feature 1 -->
+        <!-- Card 1 -->
         <div class="feature-promo-card glass-card">
+          <div class="card-glow-bg glow-red"></div>
           <div class="card-header-row">
             <div class="promo-icon red">🎬</div>
             <span class="metric-pill green">70+ FPS Hardware</span>
           </div>
           <h3 class="promo-title">True 70+ FPS Hardware Video</h3>
           <p class="promo-desc">
-            Direct Qualcomm Snapdragon VPU hardware decoding via native <code class="inline-code">VirtualDisplay</code>. Zero black screens on YouTube, Twitch, and HTML5 video, rendered directly to Unreal Dynamic Materials.
+            Direct Qualcomm Snapdragon VPU hardware decoding via native Android <code class="inline-code">VirtualDisplay</code>. Zero black screens on YouTube, Twitch, and HTML5 video, mapped directly to Unreal Dynamic Materials.
           </p>
           <div class="promo-tags">
             <span>Snapdragon XR2</span>
@@ -59,8 +144,9 @@
           </div>
         </div>
 
-        <!-- Feature 2 -->
+        <!-- Card 2 -->
         <div class="feature-promo-card glass-card">
+          <div class="card-glow-bg glow-cyan"></div>
           <div class="card-header-row">
             <div class="promo-icon cyan">🪶</div>
             <span class="metric-pill cyan">24 KB (0.02 MB)</span>
@@ -76,8 +162,9 @@
           </div>
         </div>
 
-        <!-- Feature 3 -->
+        <!-- Card 3 -->
         <div class="feature-promo-card glass-card">
+          <div class="card-glow-bg glow-purple"></div>
           <div class="card-header-row">
             <div class="promo-icon purple">🎯</div>
             <span class="metric-pill purple">W3C Pointer Ready</span>
@@ -93,8 +180,9 @@
           </div>
         </div>
 
-        <!-- Feature 4 -->
+        <!-- Card 4 -->
         <div class="feature-promo-card glass-card">
+          <div class="card-glow-bg glow-blue"></div>
           <div class="card-header-row">
             <div class="promo-icon blue">🖥️</div>
             <span class="metric-pill blue">Scalable N-Displays</span>
@@ -110,8 +198,9 @@
           </div>
         </div>
 
-        <!-- Feature 5 -->
+        <!-- Card 5 -->
         <div class="feature-promo-card glass-card">
+          <div class="card-glow-bg glow-amber"></div>
           <div class="card-header-row">
             <div class="promo-icon amber">🔄</div>
             <span class="metric-pill amber">&lt; 1ms JSON Bridge</span>
@@ -127,8 +216,9 @@
           </div>
         </div>
 
-        <!-- Feature 6 -->
+        <!-- Card 6 -->
         <div class="feature-promo-card glass-card">
+          <div class="card-glow-bg glow-green"></div>
           <div class="card-header-row">
             <div class="promo-icon green">🔒</div>
             <span class="metric-pill green">0 Permissions</span>
@@ -158,7 +248,7 @@
 .top-hero-wrapper {
   position: relative;
   width: 100%;
-  padding: 3.5rem 0.5rem 2.5rem 0.5rem;
+  padding: 3.5rem 0.5rem 2rem 0.5rem;
   overflow: hidden;
 }
 
@@ -173,15 +263,15 @@
 
 .orb-left {
   top: -5%;
-  left: 10%;
+  left: 5%;
   width: 500px;
   height: 500px;
   background: radial-gradient(circle, #38bdf8 0%, rgba(56, 189, 248, 0) 70%);
 }
 
 .orb-right {
-  top: 20%;
-  right: 8%;
+  top: 15%;
+  right: 5%;
   width: 520px;
   height: 520px;
   background: radial-gradient(circle, #818cf8 0%, rgba(129, 140, 248, 0) 70%);
@@ -190,15 +280,27 @@
 .top-hero-container {
   position: relative;
   z-index: 1;
-  max-width: 1180px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
-/* Header Centerpiece */
-.hero-center-intro {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto 3rem auto;
+/* ========================================================================= */
+/* TWO-COLUMN HERO SPLIT                                                     */
+/* ========================================================================= */
+.hero-split-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+/* Left Pitch */
+.hero-pitch-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .hero-top-badge {
@@ -233,42 +335,47 @@
 
 .hero-master-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 2.85rem;
-  line-height: 1.2;
+  font-size: 2.65rem;
+  line-height: 1.18;
   font-weight: 900;
   color: var(--vp-c-text-1);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.75rem;
   border-top: none !important;
 }
 
-.gradient-text {
+.hero-master-gradient-sub {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.35;
+  font-weight: 800;
   background: linear-gradient(135deg, #38bdf8 20%, #818cf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 1.2rem;
 }
 
 .hero-master-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   line-height: 1.65;
   color: var(--vp-c-text-2);
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
-.hero-actions-center {
+.hero-actions-left {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  gap: 0.85rem;
   flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
 .hero-cta-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.75rem;
+  padding: 0.85rem 1.6rem;
   border-radius: 12px;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 0.95rem;
   background: linear-gradient(135deg, #0284c7, #38bdf8);
   color: #04121e !important;
   text-decoration: none !important;
@@ -284,10 +391,10 @@
 .hero-cta-secondary {
   display: inline-flex;
   align-items: center;
-  padding: 0.85rem 1.5rem;
+  padding: 0.85rem 1.4rem;
   border-radius: 12px;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--vp-c-text-1) !important;
@@ -300,28 +407,335 @@
   border-color: rgba(56, 189, 248, 0.4);
 }
 
+/* Quick Trust Metrics Row */
+.quick-trust-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+  color: var(--vp-c-text-2);
+}
+
+.trust-item strong {
+  color: var(--vp-c-text-1);
+}
+
+.trust-divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
 /* ========================================================================= */
-/* FEATURES PROMO GRID                                                       */
+/* RIGHT PROMOTIONAL VIDEO FRAME                                             */
 /* ========================================================================= */
+.hero-video-right {
+  display: flex;
+  justify-content: center;
+}
+
+.promo-video-frame {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.promo-video-frame:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 45px rgba(56, 189, 248, 0.35);
+}
+
+.video-frame-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background: #090d16;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.v-live-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.v-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+  animation: pulse-glow 1.5s infinite;
+}
+
+.v-live-txt {
+  font-size: 0.74rem;
+  font-weight: 900;
+  color: #94a3b8;
+  letter-spacing: 0.06em;
+}
+
+.v-meta-badges {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.v-badge-res {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f8fafc;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.v-badge-fps {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid #10b981;
+  color: #10b981;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.video-canvas-stage {
+  position: relative;
+  height: 280px;
+  background: radial-gradient(circle at center, #111a2e 0%, #060911 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+  overflow: hidden;
+}
+
+.grid-backdrop {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.video-center-content {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-play-orb {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 35px rgba(239, 68, 68, 0.85);
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-play-orb:hover {
+  transform: scale(1.12);
+}
+
+.play-arrow {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-left: 3px;
+}
+
+.orb-ripple {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(239, 68, 68, 0.6);
+  animation: orb-pulse 2s infinite;
+}
+
+@keyframes orb-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.v-stage-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 0.3rem;
+}
+
+.v-stage-sub {
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+
+.video-bottom-controls {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(15, 23, 42, 0.85);
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+}
+
+.v-ctrl-play {
+  color: #38bdf8;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.v-ctrl-progress {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.v-progress-active {
+  height: 100%;
+  background: #38bdf8;
+}
+
+.v-ctrl-time {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+.v-ctrl-hd {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+
+.video-frame-footer {
+  padding: 0.85rem 1.25rem;
+  background: #090d16;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.v-footer-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+}
+
+/* ========================================================================= */
+/* THE 6 ANIMATED & BEAUTIFUL PRODUCT FEATURE CARDS                          */
+/* ========================================================================= */
+.section-divider-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sub-label {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #38bdf8;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.cards-section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--vp-c-text-1);
+  border-top: none !important;
+}
+
 .features-showcase-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  margin-top: 1rem;
 }
 
 .feature-promo-card {
+  position: relative;
   padding: 1.85rem;
   display: flex;
   flex-direction: column;
   border-radius: 18px;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.card-glow-bg {
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.glow-red { background: rgba(239, 68, 68, 0.4); }
+.glow-cyan { background: rgba(56, 189, 248, 0.4); }
+.glow-purple { background: rgba(168, 85, 247, 0.4); }
+.glow-blue { background: rgba(59, 130, 246, 0.4); }
+.glow-amber { background: rgba(245, 158, 11, 0.4); }
+.glow-green { background: rgba(16, 185, 129, 0.4); }
+
 .feature-promo-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(56, 189, 248, 0.45);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.15);
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(56, 189, 248, 0.2);
+}
+
+.feature-promo-card:hover .card-glow-bg {
+  opacity: 1;
+}
+
+.feature-promo-card:hover .promo-icon {
+  transform: scale(1.1) rotate(-3deg);
 }
 
 .card-header-row {
@@ -332,13 +746,14 @@
 }
 
 .promo-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .promo-icon.red { background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; }
 .promo-icon.cyan { background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; }
@@ -348,9 +763,9 @@
 .promo-icon.green { background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; }
 
 .metric-pill {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 800;
-  padding: 0.25rem 0.6rem;
+  padding: 0.25rem 0.65rem;
   border-radius: 9999px;
 }
 .metric-pill.green { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid #10b981; }
@@ -368,7 +783,7 @@
 }
 
 .promo-desc {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--vp-c-text-2);
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -399,18 +814,79 @@
   color: var(--vp-c-text-2);
 }
 
-@media (max-width: 960px) {
+/* Light Theme Enhancements for Promo Cards */
+html:not(.dark) .promo-video-frame {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) .video-frame-topbar,
+html:not(.dark) .video-frame-footer {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .v-footer-info {
+  color: #334155 !important;
+}
+
+html:not(.dark) .quick-trust-row {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .trust-divider {
+  background: #cbd5e1 !important;
+}
+
+html:not(.dark) .feature-promo-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .feature-promo-card:hover {
+  border-color: #0284c7 !important;
+  box-shadow: 0 12px 32px rgba(2, 132, 199, 0.15) !important;
+}
+
+html:not(.dark) .promo-tags span {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+@media (max-width: 1024px) {
+  .hero-split-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero-pitch-left {
+    align-items: center;
+    text-align: center;
+  }
+  .hero-actions-left {
+    justify-content: center;
+  }
   .features-showcase-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .hero-master-title {
-    font-size: 2.3rem;
   }
 }
 
 @media (max-width: 640px) {
+  .hero-master-title {
+    font-size: 2.1rem;
+  }
   .features-showcase-grid {
     grid-template-columns: 1fr;
+  }
+  .quick-trust-row {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .trust-divider {
+    display: none;
   }
 }
 </style>
