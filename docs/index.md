@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "Quest 3D WebView"
-  text: "High-Performance 1080p60 WebKit for Meta Quest"
+  text: "High-Performance 70+ FPS WebKit for Meta Quest"
   tagline: "Render live web video, multi-screen workspaces, and interactive HTML5 apps on any 3D mesh in Unreal Engine 5.5."
   image:
     src: /logo.svg
@@ -21,7 +21,7 @@ hero:
 
 features:
   - icon: ⚡
-    title: True 1080p60 Hardware Video
+    title: True 70+ FPS Hardware Video
     details: Offloaded 100% to Qualcomm Snapdragon VPU hardware decoding. Zero black screens on YouTube, Twitch, or HTML5 video.
   - icon: 🪶
     title: 24 KB Zero-Bloat Footprint

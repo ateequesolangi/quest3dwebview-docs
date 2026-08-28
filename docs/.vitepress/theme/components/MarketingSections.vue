@@ -21,7 +21,7 @@
 
         <div class="stat-card glass-card">
           <div class="stat-icon-wrap green">🎬</div>
-          <div class="stat-number">60<span class="unit">FPS</span></div>
+          <div class="stat-number">70+<span class="unit">FPS</span></div>
           <div class="stat-label">Hardware Video Sync</div>
           <div class="stat-desc">1080p YouTube, Twitch & HTML5 video decoded on Snapdragon VPU chip.</div>
         </div>
@@ -152,7 +152,7 @@
           <h3 class="usecase-title">In-Game VR Cinemas & Arcades</h3>
           <p class="usecase-desc">Stream live YouTube 4K videos, Twitch gaming channels, and WebGL mini-games on giant virtual IMAX screens inside your VR games.</p>
           <div class="usecase-tags">
-            <span>YouTube 1080p60</span>
+            <span>YouTube 70+ FPS</span>
             <span>Curved Cylinders</span>
             <span>Spatial Audio</span>
           </div>
@@ -231,7 +231,7 @@
         <div class="cta-content">
           <span class="cta-pill">⚡ INSTANT ACCESS</span>
           <h2 class="cta-title">Ready to Supercharge Your Meta Quest VR Project?</h2>
-          <p class="cta-desc">Get the complete 1080p60 hardware video pipeline, 40+ Blueprint nodes, and full documentation today.</p>
+          <p class="cta-desc">Get the complete 70+ FPS hardware video pipeline, 40+ Blueprint nodes, and full documentation today.</p>
           
           <div class="cta-button-group">
             <a href="/quest3dwebview-docs/getting-started/quick-start" class="cta-primary-btn">
@@ -268,9 +268,9 @@ function toggleFaq(index) {
 
 const comparisonData = [
   {
-    title: '1080p60 Hardware Web Video',
+    title: '1080p 70+ FPS Hardware Web Video',
     desc: 'Hardware-decoded YouTube, Twitch, and HTML5 video streaming on 3D meshes.',
-    ourValue: '✅ 60 FPS (Zero Black Screens)',
+    ourValue: '✅ 70+ FPS (Zero Black Screens)',
     umgValue: '❌ Black Screen Bug (Vulkan)',
     cefValue: '⚠️ Heavy Frame Drops',
     isHighlight: true
@@ -331,7 +331,7 @@ LineTraceByChannel(ControllerForward, 500cm)
     previewTheme: 'laser-preview',
     previewBadge: 'ClickUV Executed',
     previewHtml: '<div class="preview-btn-mock"><span>Button Clicked!</span><small>UV: (0.52, 0.78)</small></div>',
-    fps: '60 Hz',
+    fps: '70+ Hz',
     latency: '0.01 ms',
     explainer: 'Extracts exact UV coordinates from VR controller line trace and dispatches instant clicks.'
   },
@@ -347,8 +347,8 @@ TargetWebView.SetMediaVolume(0.85);
 TargetWebView.SetTargetFPS(60.0);`,
     previewTheme: 'video-preview',
     previewBadge: 'MediaCodec Hardware Active',
-    previewHtml: '<div class="preview-video-mock"><div class="badge-yt">YouTube 1080p60</div><div class="vol-bar">Volume: 85%</div></div>',
-    fps: '60 Hz',
+    previewHtml: '<div class="preview-video-mock"><div class="badge-yt">YouTube 70+ FPS</div><div class="vol-bar">Volume: 85%</div></div>',
+    fps: '70+ Hz',
     latency: '0.40 ms',
     explainer: 'Direct Snapdragon VPU hardware decoding with zero CPU overhead.'
   },
@@ -410,15 +410,15 @@ const currentTab = computed(() => playgroundTabs[activeTab.value])
 const faqList = [
   {
     q: 'Does Quest 3D WebView work on Quest 2, Quest 3, Quest 3S, and Quest Pro?',
-    a: 'Yes! Quest 3D WebView is 100% compatible with all Meta Quest standalone headsets running Android / Meta Horizon OS. It takes full advantage of the Snapdragon XR2 Gen 2 chip on Quest 3/3S for effortless 1080p60 video.'
+    a: 'Yes! Quest 3D WebView is 100% compatible with all Meta Quest standalone headsets running Android / Meta Horizon OS. It takes full advantage of the Snapdragon XR2 Gen 2 chip on Quest 3/3S for effortless 70+ FPS video.'
   },
   {
     q: 'Why does standard UMG WebBrowser show black screens on YouTube?',
-    a: 'Standard UMG WebBrowser uses software canvas drawing which cannot capture Android hardware video overlay surfaces. Quest 3D WebView creates an isolated hardware VirtualDisplay backed by an ImageReader, capturing hardware video directly at 60 FPS.'
+    a: 'Standard UMG WebBrowser uses software canvas drawing which cannot capture Android hardware video overlay surfaces. Quest 3D WebView creates an isolated hardware VirtualDisplay backed by an ImageReader, capturing hardware video directly at 70+ FPS.'
   },
   {
     q: 'How many simultaneous web screens can I run in my VR level?',
-    a: 'You can run 2–3 active 1080p60 video screens (YouTube, Twitch) simultaneously, or 1 active video screen plus 5–8 productivity panels (ChatGPT, Trello, Discord, Docs) without dropping below 72 FPS in VR.'
+    a: 'You can run 2–3 active 1080p 70+ FPS video screens (YouTube, Twitch) simultaneously, or 1 active video screen plus 5–8 productivity panels (ChatGPT, Trello, Discord, Docs) without dropping below 72 FPS in VR.'
   },
   {
     q: 'Does this plugin require any dangerous Android runtime permissions?',

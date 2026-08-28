@@ -66,7 +66,7 @@
                     <span class="play-triangle">▶</span>
                   </div>
                   <div class="video-overlay-bar">
-                    <span class="live-tag">1080p60 VPU DIRECT</span>
+                    <span class="live-tag">70+ FPS VPU DIRECT</span>
                     <span class="time-stamp">0.4ms Render Latency</span>
                   </div>
                 </div>
@@ -123,7 +123,7 @@
                 <div v-else-if="currentSlide.id === 'multiscreen'" class="multi-visual-content">
                   <div class="screen-mini-cockpit">
                     <div class="mini-screen left"><span>ChatGPT</span><small>30 FPS</small></div>
-                    <div class="mini-screen center active"><span>YouTube</span><small>60 FPS</small></div>
+                    <div class="mini-screen center active"><span>YouTube</span><small>70+ FPS</small></div>
                     <div class="mini-screen right"><span>Trello</span><small>30 FPS</small></div>
                   </div>
                   <div class="multi-status">⚡ Multi-Instance Isolated • Zero Crosstalk</div>
@@ -177,10 +177,10 @@ const slides = [
   {
     id: 'video',
     icon: '🎬',
-    navTitle: '1080p60 Video',
+    navTitle: '70+ FPS Video',
     badge: '🔥 NO MORE BLACK SCREENS',
-    headline: 'Say Goodbye to Black Screens.<br/><span class="gradient-text">Hello 1080p60 Web Video.</span>',
-    subtext: 'Direct Snapdragon VPU hardware decoding straight onto your 3D meshes. Stream YouTube 4K/60, Twitch, and HTML5 video with 0% CPU decoding overhead.',
+    headline: 'Say Goodbye to Black Screens.<br/><span class="gradient-text">Hello 70+ FPS Web Video.</span>',
+    subtext: 'Direct Snapdragon VPU hardware decoding straight onto your 3D meshes. Stream YouTube 4K, Twitch, and HTML5 video at 70+ FPS with 0% CPU decoding overhead.',
     features: [
       'Zero black screen bug on Meta Quest Vulkan',
       'Atomic double-buffered Bitmap swap (zero screen tearing)',
@@ -190,7 +190,7 @@ const slides = [
     ctaLink: '/quest3dwebview-docs/features/rendering',
     visual: {
       url: 'https://youtube.com/watch?v=VR_Cinema_4K',
-      fpsBadge: '60 FPS • VPU',
+      fpsBadge: '70+ FPS • VPU',
       themeClass: 'video-theme',
       ram: '16.5 MB',
       cpu: '< 1%'
