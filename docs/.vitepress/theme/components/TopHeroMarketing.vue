@@ -1,5 +1,36 @@
 <template>
   <div class="top-hero-wrapper">
+    
+    <!-- ========================================================================= -->
+    <!-- FULL WIDTH (100%) INFINITE MARQUEE TICKER (RIGHT AFTER NAVBAR)            -->
+    <!-- ========================================================================= -->
+    <div class="top-marquee-container">
+      <div class="marquee-track">
+        <!-- Duplicate marquee items for seamless infinite scroll -->
+        <div class="marquee-content">
+          <div v-for="(item, idx) in marqueeSpecs" :key="'m1-' + idx" class="marquee-pill-item">
+            <span class="m-icon">{{ item.icon }}</span>
+            <div class="m-text-group">
+              <strong class="m-title">{{ item.title }}</strong>
+              <span class="m-dot">•</span>
+              <span class="m-sub">{{ item.sub }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="marquee-content" aria-hidden="true">
+          <div v-for="(item, idx) in marqueeSpecs" :key="'m2-' + idx" class="marquee-pill-item">
+            <span class="m-icon">{{ item.icon }}</span>
+            <div class="m-text-group">
+              <strong class="m-title">{{ item.title }}</strong>
+              <span class="m-dot">•</span>
+              <span class="m-sub">{{ item.sub }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Ambient Holographic Glows -->
     <div class="glow-orb orb-left"></div>
     <div class="glow-orb orb-right"></div>
@@ -11,7 +42,7 @@
       <!-- ========================================================================= -->
       <div class="hero-split-grid">
         
-        <!-- Left Side: Core Marketing Pitch & Key Product Details -->
+        <!-- Left Side: Core Marketing Pitch -->
         <div class="hero-pitch-left">
           
           <div class="hero-top-badge">
@@ -29,57 +60,6 @@
           <p class="hero-master-subtitle">
             The only Unreal Engine plugin engineered for Meta Quest that renders live 1080p web video (YouTube, Twitch, WebGL) onto any 3D surface with <strong>zero black screens</strong>, <strong>zero APK bloat</strong>, and <strong>full W3C VR laser interaction</strong>.
           </p>
-
-          <!-- Core Product Specs Matrix Grid -->
-          <div class="specs-matrix-grid">
-            <div class="spec-cell">
-              <span class="s-icon">⚡</span>
-              <div class="s-info">
-                <span class="s-title">Snapdragon VPU Video</span>
-                <span class="s-desc">70+ FPS • 0.4ms Latency • 0 Black Screens</span>
-              </div>
-            </div>
-
-            <div class="spec-cell">
-              <span class="s-icon">🪶</span>
-              <div class="s-info">
-                <span class="s-title">24 KB Micro Binary</span>
-                <span class="s-desc">99.9% Leaner than 250 MB CEF Bloat</span>
-              </div>
-            </div>
-
-            <div class="spec-cell">
-              <span class="s-icon">🎯</span>
-              <div class="s-info">
-                <span class="s-title">W3C Laser & Keyboard</span>
-                <span class="s-desc">Sub-Pixel UV Raycast & Auto 3D Focus</span>
-              </div>
-            </div>
-
-            <div class="spec-cell">
-              <span class="s-icon">🖥️</span>
-              <div class="s-info">
-                <span class="s-title">Multi-Monitor Workspaces</span>
-                <span class="s-desc">Scalable N-Displays • Isolated Cookies</span>
-              </div>
-            </div>
-
-            <div class="spec-cell">
-              <span class="s-icon">🔄</span>
-              <div class="s-info">
-                <span class="s-title">Two-Way JS Bridge</span>
-                <span class="s-desc">&lt; 1ms JSON Sync with Unreal Blueprints</span>
-              </div>
-            </div>
-
-            <div class="spec-cell">
-              <span class="s-icon">🔒</span>
-              <div class="s-info">
-                <span class="s-title">100% Meta Compliant</span>
-                <span class="s-desc">0 Dangerous Android Runtime Permissions</span>
-              </div>
-            </div>
-          </div>
 
           <!-- CTA Action Row -->
           <div class="hero-actions-left">
@@ -286,17 +266,136 @@
 </template>
 
 <script setup>
-// Clean straightforward component
+const marqueeSpecs = [
+  { icon: '⚡', title: 'Snapdragon VPU Video', sub: '70+ FPS • 0.4ms Latency • 0 Black Screens' },
+  { icon: '🪶', title: '24 KB Micro Binary', sub: '99.9% Leaner than 250 MB CEF Bloat' },
+  { icon: '🎯', title: 'W3C Laser & Keyboard', sub: 'Sub-Pixel UV Raycast & Auto 3D Focus' },
+  { icon: '🖥️', title: 'Multi-Monitor Workspaces', sub: 'Scalable N-Displays • Isolated Cookies' },
+  { icon: '🔄', title: 'Two-Way JS Bridge', sub: '< 1ms JSON Sync with Unreal Blueprints' },
+  { icon: '🔒', title: '100% Meta Compliant', sub: '0 Dangerous Android Runtime Permissions' }
+]
 </script>
 
 <style scoped>
 .top-hero-wrapper {
   position: relative;
   width: 100%;
-  padding: 3.5rem 0.5rem 2rem 0.5rem;
+  padding: 0 0 2rem 0;
   overflow: hidden;
 }
 
+/* ========================================================================= */
+/* 100% FULL-WIDTH MARQUEE TICKER (RIGHT AFTER NAVBAR)                       */
+/* ========================================================================= */
+.top-marquee-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: rgba(10, 15, 29, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  padding: 0.65rem 0;
+  margin-bottom: 3rem;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  user-select: none;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: marquee-scroll 28s linear infinite;
+  padding-right: 1rem;
+}
+
+.marquee-track:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.marquee-pill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 1.15rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.marquee-pill-item:hover {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+.m-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.m-text-group {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.m-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--vp-c-text-1);
+}
+
+.m-dot {
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+.m-sub {
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+}
+
+/* Light Theme overrides for marquee */
+html:not(.dark) .top-marquee-container {
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+html:not(.dark) .marquee-pill-item {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+html:not(.dark) .marquee-pill-item:hover {
+  background: #e0f2fe !important;
+  border-color: #0284c7 !important;
+}
+
+/* ========================================================================= */
+/* GLOWS & CONTAINER                                                         */
+/* ========================================================================= */
 .glow-orb {
   position: absolute;
   border-radius: 50%;
@@ -307,7 +406,7 @@
 }
 
 .orb-left {
-  top: -5%;
+  top: 5%;
   left: 5%;
   width: 500px;
   height: 500px;
@@ -315,7 +414,7 @@
 }
 
 .orb-right {
-  top: 15%;
+  top: 25%;
   right: 5%;
   width: 520px;
   height: 520px;
@@ -327,6 +426,7 @@
   z-index: 1;
   max-width: 1240px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* ========================================================================= */
@@ -337,7 +437,7 @@
   grid-template-columns: 1.15fr 0.95fr;
   gap: 2.5rem;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 4.5rem;
 }
 
 /* Left Pitch */
@@ -403,59 +503,7 @@
   font-size: 1.05rem;
   line-height: 1.65;
   color: var(--vp-c-text-2);
-  margin-bottom: 1.5rem;
-}
-
-/* ========================================================================= */
-/* SPECS MATRIX GRID (Rich Technical Details)                                */
-/* ========================================================================= */
-.specs-matrix-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
-  width: 100%;
-  margin-bottom: 1.75rem;
-}
-
-.spec-cell {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  padding: 0.65rem 0.85rem;
-  border-radius: 10px;
-  background: rgba(15, 23, 42, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.2s ease;
-}
-
-.spec-cell:hover {
-  background: rgba(56, 189, 248, 0.08);
-  border-color: rgba(56, 189, 248, 0.3);
-  transform: translateX(2px);
-}
-
-.s-icon {
-  font-size: 1.15rem;
-  line-height: 1.2;
-  margin-top: 2px;
-}
-
-.s-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.s-title {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--vp-c-text-1);
-}
-
-.s-desc {
-  font-size: 0.74rem;
-  color: var(--vp-c-text-2);
-  line-height: 1.35;
+  margin-bottom: 2rem;
 }
 
 /* CTA Action Buttons */
@@ -463,7 +511,7 @@
   display: flex;
   gap: 0.85rem;
   flex-wrap: wrap;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .hero-cta-primary {
@@ -915,25 +963,7 @@
   color: var(--vp-c-text-2);
 }
 
-/* Light Theme Enhancements for Promo Cards & Specs Grid */
-html:not(.dark) .spec-cell {
-  background: #f8fafc !important;
-  border-color: #e2e8f0 !important;
-}
-
-html:not(.dark) .spec-cell:hover {
-  background: #e0f2fe !important;
-  border-color: #0284c7 !important;
-}
-
-html:not(.dark) .s-title {
-  color: #0f172a !important;
-}
-
-html:not(.dark) .s-desc {
-  color: #334155 !important;
-}
-
+/* Light Theme Enhancements */
 html:not(.dark) .hw-chip {
   background: #f1f5f9 !important;
   border-color: #cbd5e1 !important;
@@ -1002,9 +1032,6 @@ html:not(.dark) .promo-tags span {
 @media (max-width: 640px) {
   .hero-master-title {
     font-size: 2.1rem;
-  }
-  .specs-matrix-grid {
-    grid-template-columns: 1fr;
   }
   .features-showcase-grid {
     grid-template-columns: 1fr;
