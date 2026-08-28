@@ -1,0 +1,22 @@
+{
+  "name": "quest-3d-webview-docs",
+  "version": "1.0.0",
+  "description": "Official Web Documentation for Quest 3D WebView Unreal Engine Plugin",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [
+    "unreal-engine",
+    "meta-quest",
+    "webview",
+    "virtual-reality",
+    "quest-3d-webview"
+  ],
+  "author": "Ateeque ur Rehman",
+  "license": "Commercial",
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}

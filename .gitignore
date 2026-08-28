@@ -1,0 +1,23 @@
+# Node & VitePress
+node_modules/
+docs/.vitepress/dist
+docs/.vitepress/cache
+.DS_Store
+
+# Unreal Engine artifacts
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vscode/
+*.VC.db
+*.opendb
+*.sln
+*.uproject
+Content/
+Playable/
+Config/
+Plugins/
+Source/
+Fab_submission/
+*.mp4
