@@ -11,11 +11,12 @@
       <!-- ========================================================================= -->
       <div class="hero-split-grid">
         
-        <!-- Left Side: Core Marketing Pitch -->
+        <!-- Left Side: Core Marketing Pitch & Key Product Details -->
         <div class="hero-pitch-left">
+          
           <div class="hero-top-badge">
             <span class="pulse-indicator"></span>
-            <span class="badge-txt">UNREAL ENGINE 5.5 • META QUEST NATIVE</span>
+            <span class="badge-txt">UNREAL ENGINE 5.5 • QUEST 2 / 3 / 3S / PRO</span>
           </div>
 
           <h1 class="hero-master-title">
@@ -29,6 +30,57 @@
             The only Unreal Engine plugin engineered for Meta Quest that renders live 1080p web video (YouTube, Twitch, WebGL) onto any 3D surface with <strong>zero black screens</strong>, <strong>zero APK bloat</strong>, and <strong>full W3C VR laser interaction</strong>.
           </p>
 
+          <!-- Core Product Specs Matrix Grid -->
+          <div class="specs-matrix-grid">
+            <div class="spec-cell">
+              <span class="s-icon">⚡</span>
+              <div class="s-info">
+                <span class="s-title">Snapdragon VPU Video</span>
+                <span class="s-desc">70+ FPS • 0.4ms Latency • 0 Black Screens</span>
+              </div>
+            </div>
+
+            <div class="spec-cell">
+              <span class="s-icon">🪶</span>
+              <div class="s-info">
+                <span class="s-title">24 KB Micro Binary</span>
+                <span class="s-desc">99.9% Leaner than 250 MB CEF Bloat</span>
+              </div>
+            </div>
+
+            <div class="spec-cell">
+              <span class="s-icon">🎯</span>
+              <div class="s-info">
+                <span class="s-title">W3C Laser & Keyboard</span>
+                <span class="s-desc">Sub-Pixel UV Raycast & Auto 3D Focus</span>
+              </div>
+            </div>
+
+            <div class="spec-cell">
+              <span class="s-icon">🖥️</span>
+              <div class="s-info">
+                <span class="s-title">Multi-Monitor Workspaces</span>
+                <span class="s-desc">Scalable N-Displays • Isolated Cookies</span>
+              </div>
+            </div>
+
+            <div class="spec-cell">
+              <span class="s-icon">🔄</span>
+              <div class="s-info">
+                <span class="s-title">Two-Way JS Bridge</span>
+                <span class="s-desc">&lt; 1ms JSON Sync with Unreal Blueprints</span>
+              </div>
+            </div>
+
+            <div class="spec-cell">
+              <span class="s-icon">🔒</span>
+              <div class="s-info">
+                <span class="s-title">100% Meta Compliant</span>
+                <span class="s-desc">0 Dangerous Android Runtime Permissions</span>
+              </div>
+            </div>
+          </div>
+
           <!-- CTA Action Row -->
           <div class="hero-actions-left">
             <a href="/quest3dwebview-docs/getting-started/quick-start" class="hero-cta-primary">
@@ -39,27 +91,20 @@
               <span>Explore All Capabilities</span>
             </a>
             <a href="/quest3dwebview-docs/api-reference/blueprint-functions" class="hero-cta-secondary">
-              <span>📚 Blueprint API</span>
+              <span>📚 40+ Blueprint Nodes</span>
             </a>
           </div>
 
-          <!-- Quick Trust Metrics Row -->
-          <div class="quick-trust-row">
-            <div class="trust-item">
-              <span class="t-icon">⚡</span>
-              <span class="t-txt"><strong>70+ FPS</strong> Solid</span>
-            </div>
-            <div class="trust-divider"></div>
-            <div class="trust-item">
-              <span class="t-icon">🪶</span>
-              <span class="t-txt"><strong>24 KB</strong> Zero Bloat</span>
-            </div>
-            <div class="trust-divider"></div>
-            <div class="trust-item">
-              <span class="t-icon">🔒</span>
-              <span class="t-txt"><strong>0</strong> Permissions</span>
-            </div>
+          <!-- Hardware Support Badges Row -->
+          <div class="hw-support-row">
+            <span class="hw-label">TARGET HARDWARE:</span>
+            <span class="hw-chip">Quest 3</span>
+            <span class="hw-chip">Quest 3S</span>
+            <span class="hw-chip">Quest 2</span>
+            <span class="hw-chip">Quest Pro</span>
+            <span class="hw-chip ue">UE 5.5</span>
           </div>
+
         </div>
 
         <!-- Right Side: Promotional Video Container (Ready for user's video) -->
@@ -135,7 +180,7 @@
           </div>
           <h3 class="promo-title">True 70+ FPS Hardware Video</h3>
           <p class="promo-desc">
-            Direct Qualcomm Snapdragon VPU hardware decoding via native Android <code class="inline-code">VirtualDisplay</code>. Zero black screens on YouTube, Twitch, and HTML5 video, mapped directly to Unreal Dynamic Materials.
+            Direct Qualcomm Snapdragon VPU hardware decoding via native Android <code class="inline-code">VirtualDisplay</code>. Zero black screens on YouTube, Twitch, and HTML5 video, rendered directly to Unreal Dynamic Materials.
           </p>
           <div class="promo-tags">
             <span>Snapdragon XR2</span>
@@ -358,14 +403,67 @@
   font-size: 1.05rem;
   line-height: 1.65;
   color: var(--vp-c-text-2);
+  margin-bottom: 1.5rem;
+}
+
+/* ========================================================================= */
+/* SPECS MATRIX GRID (Rich Technical Details)                                */
+/* ========================================================================= */
+.specs-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  width: 100%;
   margin-bottom: 1.75rem;
 }
 
+.spec-cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.spec-cell:hover {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateX(2px);
+}
+
+.s-icon {
+  font-size: 1.15rem;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.s-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.s-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--vp-c-text-1);
+}
+
+.s-desc {
+  font-size: 0.74rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.35;
+}
+
+/* CTA Action Buttons */
 .hero-actions-left {
   display: flex;
   gap: 0.85rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-cta-primary {
@@ -407,33 +505,36 @@
   border-color: rgba(56, 189, 248, 0.4);
 }
 
-/* Quick Trust Metrics Row */
-.quick-trust-row {
+/* Hardware Support Row */
+.hw-support-row {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  padding: 0.75rem 1.25rem;
-  border-radius: 12px;
-  background: rgba(15, 23, 42, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.84rem;
+.hw-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--vp-c-text-3);
+  letter-spacing: 0.05em;
+  margin-right: 0.2rem;
+}
+
+.hw-chip {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--vp-c-text-2);
 }
 
-.trust-item strong {
-  color: var(--vp-c-text-1);
-}
-
-.trust-divider {
-  width: 1px;
-  height: 18px;
-  background: rgba(255, 255, 255, 0.12);
+.hw-chip.ue {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: #38bdf8;
+  color: #38bdf8;
 }
 
 /* ========================================================================= */
@@ -814,7 +915,37 @@
   color: var(--vp-c-text-2);
 }
 
-/* Light Theme Enhancements for Promo Cards */
+/* Light Theme Enhancements for Promo Cards & Specs Grid */
+html:not(.dark) .spec-cell {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .spec-cell:hover {
+  background: #e0f2fe !important;
+  border-color: #0284c7 !important;
+}
+
+html:not(.dark) .s-title {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .s-desc {
+  color: #334155 !important;
+}
+
+html:not(.dark) .hw-chip {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+html:not(.dark) .hw-chip.ue {
+  background: #e0f2fe !important;
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
+}
+
 html:not(.dark) .promo-video-frame {
   background: #ffffff !important;
   border-color: #cbd5e1 !important;
@@ -829,15 +960,6 @@ html:not(.dark) .video-frame-footer {
 
 html:not(.dark) .v-footer-info {
   color: #334155 !important;
-}
-
-html:not(.dark) .quick-trust-row {
-  background: #f8fafc !important;
-  border-color: #e2e8f0 !important;
-}
-
-html:not(.dark) .trust-divider {
-  background: #cbd5e1 !important;
 }
 
 html:not(.dark) .feature-promo-card {
@@ -869,6 +991,9 @@ html:not(.dark) .promo-tags span {
   .hero-actions-left {
     justify-content: center;
   }
+  .hw-support-row {
+    justify-content: center;
+  }
   .features-showcase-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -878,15 +1003,11 @@ html:not(.dark) .promo-tags span {
   .hero-master-title {
     font-size: 2.1rem;
   }
-  .features-showcase-grid {
+  .specs-matrix-grid {
     grid-template-columns: 1fr;
   }
-  .quick-trust-row {
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-  .trust-divider {
-    display: none;
+  .features-showcase-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
