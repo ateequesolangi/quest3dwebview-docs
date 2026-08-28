@@ -47,39 +47,60 @@
     <!-- ========================================================================= -->
     <section class="section-block">
       <div class="section-header text-center">
-        <span class="section-pill">🥊 HEAD-TO-HEAD MATRIX</span>
+        <span class="section-pill">🥊 UNMATCHED PERFORMANCE</span>
         <h2 class="section-title">Why VR Developers Choose Quest 3D WebView</h2>
-        <p class="section-subtitle">See how we stack up against standard Unreal UMG WebBrowser and heavy CEF plugins.</p>
+        <p class="section-subtitle">A direct side-by-side comparison against standard Unreal UMG WebBrowser and bloated third-party CEF plugins.</p>
       </div>
 
-      <div class="comparison-table-wrapper glass-card">
+      <div class="comparison-table-wrapper glass-card high-contrast-card">
         <table class="comp-table">
           <thead>
             <tr>
-              <th class="feature-col">Feature / Capability</th>
+              <th class="feature-col">Key Architectural Feature</th>
               <th class="winner-col">
-                <div class="col-header-badge">
+                <div class="col-header-badge glow-winner">
                   <span class="crown">👑</span> Quest 3D WebView
                 </div>
               </th>
-              <th>Standard UMG WebBrowser</th>
-              <th>Third-Party CEF Plugins</th>
+              <th class="competitor-header">Standard UMG WebBrowser</th>
+              <th class="competitor-header">Third-Party CEF Plugins</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(row, idx) in comparisonData" :key="idx" :class="{ highlight: row.isHighlight }">
+            <tr v-for="(row, idx) in comparisonData" :key="idx" :class="{ highlight: row.isHighlight, 'even-row': idx % 2 === 0 }">
               <td class="feature-title">
-                <strong>{{ row.title }}</strong>
+                <div class="title-with-pill">
+                  <span class="row-num">0{{ idx + 1 }}</span>
+                  <strong>{{ row.title }}</strong>
+                </div>
                 <div class="feature-desc">{{ row.desc }}</div>
               </td>
               <td class="winner-cell">
-                <span class="badge-win">{{ row.ourValue }}</span>
+                <div class="pill-badge win-pill">
+                  {{ row.ourValue }}
+                </div>
               </td>
-              <td class="standard-cell">{{ row.umgValue }}</td>
-              <td class="standard-cell">{{ row.cefValue }}</td>
+              <td class="standard-cell">
+                <div class="pill-badge standard-pill">
+                  {{ row.umgValue }}
+                </div>
+              </td>
+              <td class="standard-cell">
+                <div class="pill-badge standard-pill">
+                  {{ row.cefValue }}
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
+
+        <!-- Table Bottom Key Takeaways Bar -->
+        <div class="table-takeaway-bar">
+          <div class="takeaway-badge">⚡ THE BOTTOM LINE</div>
+          <div class="takeaway-text">
+            <strong>10x Faster Setup</strong> • <strong>99.9% Smaller APK (24 KB)</strong> • <strong>Zero Video Black Screens</strong> • <strong>100% Meta Horizon Store Ready</strong>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -555,7 +576,14 @@ const faqList = [
 /* Comparison Table */
 .comparison-table-wrapper {
   overflow-x: auto;
-  padding: 1rem;
+  padding: 0;
+}
+
+.high-contrast-card {
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.1) !important;
+  padding: 0 !important;
+  overflow: hidden;
 }
 
 .comp-table {
@@ -565,56 +593,127 @@ const faqList = [
 }
 
 .comp-table th {
-  padding: 1rem;
-  font-size: 0.9rem;
+  padding: 1.25rem 1.1rem;
+  font-size: 0.92rem;
   font-weight: 800;
   color: #94a3b8;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom: 2px solid rgba(56, 189, 248, 0.2);
 }
 
 .comp-table th.winner-col {
-  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border-bottom: 2px solid #38bdf8;
 }
 
-.col-header-badge {
+.col-header-badge.glow-winner {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(56, 189, 248, 0.15);
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.3), rgba(56, 189, 248, 0.2));
+  padding: 0.45rem 0.9rem;
+  border-radius: 10px;
   border: 1px solid #38bdf8;
+  color: #38bdf8;
+  font-weight: 900;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
 }
 
 .comp-table td {
-  padding: 1.1rem 1rem;
-  font-size: 0.88rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.2rem 1.1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.comp-table tr.even-row {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.title-with-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.row-num {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
 }
 
 .feature-title strong {
   color: #f8fafc;
-  font-size: 0.95rem;
-}
-
-.feature-desc {
-  font-size: 0.78rem;
-  color: #94a3b8;
-  margin-top: 0.2rem;
-}
-
-.winner-cell {
-  background: rgba(56, 189, 248, 0.04);
-  font-weight: 700;
-}
-
-.badge-win {
-  color: #10b981;
+  font-size: 1rem;
   font-weight: 800;
 }
 
-.standard-cell {
-  color: #cbd5e1;
+.feature-desc {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.45;
+  padding-left: 2rem;
+}
+
+.winner-cell {
+  background: rgba(56, 189, 248, 0.06);
+  border-left: 1px solid rgba(56, 189, 248, 0.15);
+  border-right: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.win-pill {
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid #10b981;
+  color: #10b981;
+  font-weight: 800;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.standard-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+}
+
+.table-takeaway-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(90deg, rgba(2, 132, 199, 0.2), rgba(15, 23, 42, 0.9));
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
+  flex-wrap: wrap;
+}
+
+.takeaway-badge {
+  background: #38bdf8;
+  color: #04121e;
+  font-weight: 900;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+}
+
+.takeaway-text {
+  font-size: 0.88rem;
+  color: #f8fafc;
+}
+
+.takeaway-text strong {
+  color: #38bdf8;
 }
 
 /* Playground */

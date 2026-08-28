@@ -10,10 +10,13 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap' }],
     ['meta', { name: 'theme-color', content: '#38bdf8' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'Quest 3D WebView — Unreal Engine Plugin Documentation' }],
-    ['meta', { property: 'og:description', content: 'Hardware-accelerated 1080p60 web video, multi-screen workspaces, and W3C VR laser interaction for Meta Quest in Unreal Engine.' }]
+    ['meta', { property: 'og:description', content: 'Hardware-accelerated 70+ FPS web video, multi-screen workspaces, and W3C VR laser interaction for Meta Quest in Unreal Engine.' }]
   ],
 
   themeConfig: {
