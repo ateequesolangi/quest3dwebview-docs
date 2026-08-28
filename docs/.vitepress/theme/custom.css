@@ -37,14 +37,14 @@ html:not(.dark) {
   h1, h2, h3, h4, h5, h6,
   .hero-master-title, .slide-headline, .section-title, .header-title,
   .usecase-title, .faq-q-text, .stat-number, .feature-title strong,
-  .pillar-title, .tab-card-title, .results-meta strong, strong {
+  .pillar-title, .promo-title, .tab-card-title, .results-meta strong, strong {
     color: #0f172a !important;
   }
 
   /* Universal Light Theme Body & Descriptions */
   p, .hero-master-subtitle, .slide-subtext, .section-subtitle,
   .header-desc, .stat-desc, .feature-desc, .usecase-desc, .faq-answer-text,
-  .pillar-desc, .node-desc, .results-meta, .highlight-item, .trust-pill, .stat-label {
+  .pillar-desc, .promo-desc, .node-desc, .results-meta, .highlight-item, .trust-pill, .stat-label {
     color: #334155 !important;
   }
 
