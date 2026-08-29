@@ -4,6 +4,7 @@ import TopHeroMarketing from './components/TopHeroMarketing.vue'
 import HeroCampaignSlider from './components/HeroCampaignSlider.vue'
 import MarketingSections from './components/MarketingSections.vue'
 import BlueprintNodesGuide from './components/BlueprintNodesGuide.vue'
+import SecretJsBridgeTest from './components/SecretJsBridgeTest.vue'
 
 export default {
   extends: DefaultTheme,
@@ -12,5 +13,6 @@ export default {
     app.component('HeroCampaignSlider', HeroCampaignSlider)
     app.component('MarketingSections', MarketingSections)
     app.component('BlueprintNodesGuide', BlueprintNodesGuide)
+    app.component('SecretJsBridgeTest', SecretJsBridgeTest)
   }
 }
