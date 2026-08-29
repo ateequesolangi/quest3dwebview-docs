@@ -61,21 +61,31 @@
             The only Unreal Engine plugin engineered for Meta Quest that renders live 1080p web video (YouTube, Twitch, WebGL) onto any 3D surface with <strong>zero black screens</strong>, <strong>zero APK bloat</strong>, and <strong>full W3C VR laser interaction</strong>.
           </p>
 
-          <!-- CTA Action Row -->
-          <div class="hero-actions-left">
-            <a href="/quest3dwebview-docs/getting-started/quick-start" class="hero-cta-primary">
-              <span>🚀 5-Minute Quick Start</span>
-              <span class="btn-arrow">→</span>
-            </a>
-            <a href="/quest3dwebview-docs/features/overview" class="hero-cta-secondary">
-              <span>Explore All Capabilities</span>
-            </a>
-            <a href="/quest3dwebview-docs/api-reference/blueprint-functions" class="hero-cta-secondary">
-              <span>📚 40+ Blueprint Nodes</span>
-            </a>
+          <!-- CTA Action Layout: Row 1 Primary, Row 2 Secondary -->
+          <div class="hero-actions-container">
+            <div class="action-row-primary">
+              <a href="/quest3dwebview-docs/getting-started/quick-start" class="hero-cta-primary">
+                <span>🚀 5-Minute Quick Start Guide</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+            
+            <div class="action-row-secondary">
+              <a href="/quest3dwebview-docs/features/overview" class="hero-cta-secondary">
+                <span>Explore All Capabilities</span>
+              </a>
+              <a href="/quest3dwebview-docs/api-reference/blueprint-functions" class="hero-cta-secondary">
+                <span>📚 40+ Blueprint Nodes</span>
+              </a>
+            </div>
           </div>
 
-          <!-- Hardware Support Badges Row -->
+        </div>
+
+        <!-- Right Side: Promotional Video Container (Ready for user's video) -->
+        <div class="hero-video-right">
+          
+          <!-- Hardware Support Badges Row (Over top of video on right side) -->
           <div class="hw-support-row">
             <span class="hw-label">TARGET HARDWARE:</span>
             <span class="hw-chip">Quest 3</span>
@@ -85,10 +95,6 @@
             <span class="hw-chip ue">UE 5.5</span>
           </div>
 
-        </div>
-
-        <!-- Right Side: Promotional Video Container (Ready for user's video) -->
-        <div class="hero-video-right">
           <div class="promo-video-frame glass-panel">
             
             <!-- Video Top Header Bar -->
@@ -508,22 +514,31 @@ html:not(.dark) .marquee-pill-item:hover {
   margin-bottom: 2rem;
 }
 
-/* CTA Action Buttons */
-.hero-actions-left {
+/* CTA Action Buttons: Clean 2-Row Hierarchy */
+.hero-actions-container {
   display: flex;
+  flex-direction: column;
   gap: 0.85rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.75rem;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1rem;
+}
+
+.action-row-primary {
+  display: flex;
+  width: 100%;
 }
 
 .hero-cta-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.6rem;
+  width: 100%;
+  padding: 0.9rem 1.6rem;
   border-radius: 12px;
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 1rem;
   background: linear-gradient(135deg, #0284c7, #38bdf8);
   color: #04121e !important;
   text-decoration: none !important;
@@ -536,18 +551,27 @@ html:not(.dark) .marquee-pill-item:hover {
   box-shadow: 0 8px 32px rgba(56, 189, 248, 0.7);
 }
 
+.action-row-secondary {
+  display: flex;
+  gap: 0.85rem;
+  width: 100%;
+}
+
 .hero-cta-secondary {
+  flex: 1;
   display: inline-flex;
   align-items: center;
-  padding: 0.85rem 1.4rem;
+  justify-content: center;
+  padding: 0.8rem 1.2rem;
   border-radius: 12px;
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--vp-c-text-1) !important;
   text-decoration: none !important;
   transition: all 0.25s ease;
+  white-space: nowrap;
 }
 
 .hero-cta-secondary:hover {
@@ -555,12 +579,23 @@ html:not(.dark) .marquee-pill-item:hover {
   border-color: rgba(56, 189, 248, 0.4);
 }
 
-/* Hardware Support Row */
+/* Right Side: Video + Hardware Badges */
+.hero-video-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* Hardware Support Row (Over Video) */
 .hw-support-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.45rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .hw-label {
@@ -590,11 +625,6 @@ html:not(.dark) .marquee-pill-item:hover {
 /* ========================================================================= */
 /* RIGHT PROMOTIONAL VIDEO FRAME                                             */
 /* ========================================================================= */
-.hero-video-right {
-  display: flex;
-  justify-content: center;
-}
-
 .promo-video-frame {
   width: 100%;
   max-width: 520px;
