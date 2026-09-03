@@ -101,7 +101,7 @@
             <div class="video-frame-topbar">
               <div class="v-live-tag">
                 <span class="v-live-dot"></span>
-                <span class="v-live-txt">PROMOTIONAL VIDEO</span>
+                <span class="v-live-txt">LIVE VR GAMEPLAY</span>
               </div>
               <div class="v-meta-badges">
                 <span class="v-badge-res">1080p60</span>
@@ -109,29 +109,16 @@
               </div>
             </div>
 
-            <!-- Video Display Canvas Area -->
+            <!-- Video Display Stage with Autoplay Muted Loop Video -->
             <div class="video-canvas-stage">
-              <!-- Holographic Grid Background -->
-              <div class="grid-backdrop"></div>
-
-              <div class="video-center-content">
-                <div class="video-play-orb">
-                  <span class="play-arrow">▶</span>
-                  <div class="orb-ripple"></div>
-                </div>
-                <div class="v-stage-title">Official Feature Walkthrough</div>
-                <div class="v-stage-sub">Direct Qualcomm Snapdragon VPU & 3D Laser Raycasting</div>
-              </div>
-
-              <!-- Sleek Bottom Video Controls -->
-              <div class="video-bottom-controls">
-                <div class="v-ctrl-play">▶</div>
-                <div class="v-ctrl-progress">
-                  <div class="v-progress-active" style="width: 38%;"></div>
-                </div>
-                <div class="v-ctrl-time">01:14 / 03:00</div>
-                <div class="v-ctrl-hd">HD</div>
-              </div>
+              <video
+                class="gameplay-hero-video"
+                :src="videoSrc"
+                autoplay
+                muted
+                loop
+                playsinline
+              ></video>
             </div>
 
             <!-- Video Bottom Status Bar -->
@@ -272,6 +259,11 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { withBase } from 'vitepress'
+
+const videoSrc = computed(() => withBase('/Gameplay.mp4'))
+
 const marqueeSpecs = [
   { icon: '⚡', title: 'Snapdragon VPU', sub: '70+ FPS Hardware Video' },
   { icon: '🪶', title: '24 KB Footprint', sub: '0 MB Heavy CEF Bloat' },
@@ -702,22 +694,21 @@ html:not(.dark) .marquee-pill-item:hover {
 
 .video-canvas-stage {
   position: relative;
-  height: 280px;
-  background: radial-gradient(circle at center, #111a2e 0%, #060911 100%);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #060911;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1.25rem;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
+  padding: 0;
 }
 
-.grid-backdrop {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
-  pointer-events: none;
+.gameplay-hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .video-center-content {
